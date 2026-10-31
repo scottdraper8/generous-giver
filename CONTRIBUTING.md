@@ -2,7 +2,7 @@
 
 ## Set up
 
-Use Python 3.13.18. Install the fully pinned tooling in a virtual environment and register the local Git hook:
+Use Python 3.13. Install the fully pinned tooling in a virtual environment and register the local Git hook:
 
 ```sh
 python3.13 -m venv .venv
