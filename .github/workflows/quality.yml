@@ -15,6 +15,12 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          disable-sudo: true
+          egress-policy: audit
+
       - name: Check out source
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -25,15 +31,6 @@ jobs:
         with:
           python-version: "3.13"
           check-latest: false
-
-      - name: Harden runner
-        uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
-        with:
-          disable-sudo: true
-          egress-policy: block
-          allowed-endpoints: >-
-            pypi.org:443,
-            files.pythonhosted.org:443
 
       - name: Install hash-locked quality tooling
         run: >-

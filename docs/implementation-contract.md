@@ -15,7 +15,7 @@ The relevant vanilla asset paths are:
 - `METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN` — alien interaction options and references to costs.
 - `METADATA/REALITY/TABLES/COSTTABLE.MBIN` — shared costs for dialogue options.
 
-The gift-tier cost IDs found in the current cost table are `KORVAXGIFT1`, `KORVAXGIFT2`, `GEKGIFT1`, `GEKGIFT2`, `VYKGIFT1`, and `VYKGIFT2`. They map to the race-specific Curio product IDs and currently specify an amount of one. The same cost IDs occur in more than one dialogue context. A global amount change may therefore affect purchases, salvage, or other offers; references must be classified before patching.
+The gift-tier cost IDs found in the current cost table are `KORVAXGIFT1`, `KORVAXGIFT2`, `GEKGIFT1`, `GEKGIFT2`, `VYKGIFT1`, and `VYKGIFT2`. They map to the race-specific Curio product IDs and currently specify an amount of one. The same cost IDs occur in more than one dialogue context. A global amount change may therefore affect purchases, salvage, or other offers; references must be classified before patching. See the [cost-reference investigation](cost-reference-investigation.md) for the observed reference counts and unresolved runtime questions.
 
 These findings were made from local vanilla data and must be rechecked against the game build selected for release. No extracted game data is stored in this repository.
 
