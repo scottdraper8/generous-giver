@@ -2,10 +2,10 @@
 
 ## Product contract
 
-- Build **Generous Giver** as a No Man's Sky loose-data mod. The intended installer choices are 5x, 10x, and All.
+- Build **Generous Giver** as a No Man's Sky loose-data mod targeting only the Korvax **Offer a gift** choice in the pictured secondary interaction (`EXP_NPC_SECONDARY` / `ALL_REQUEST_STD_LOW`). The installer choices are 5x, 10x, and All.
 - A cap means *up to* the selected amount. If only seven compatible gifts are accessible at a cap of ten, the game must offer those seven rather than disable the action. All means the complete compatible amount visible to the game at that interaction.
-- Use only the inventories the game itself makes available to the interaction. Do not invent an inventory search or promise access to storage that the game cannot reach.
-- Preserve unrelated dialogue, costs, rewards, and progression. Avoid broad table edits until all references and side effects are understood.
+- Use only the inventories the game itself makes available to this interaction. Do not invent an inventory search or promise access to storage that the game cannot reach.
+- Preserve every sibling dialogue option, shared cost, reward, and progression effect. Do not broaden the target to other races or gift tiers.
 - Prefer the narrowest native data patch. Do not add DLLs, executable hooks, or a runtime helper unless investigation proves the data-only design cannot meet the contract; if so, stop and report the incompatibility instead of weakening the behavior silently.
 - Do not put extracted game files, copyrighted assets, saves, local logs, or compiler binaries in this repository.
 - Keep this project independent of the `squinchmods` worktree. Never modify its active submodules, probes, or agents' changes while working here.
@@ -20,4 +20,4 @@
 
 ## Durable context
 
-The repo is intentionally a pre-release scaffold: the FOMOD describes the three settings, but no game patch is shipped yet. The unresolved core question is whether the native interaction cost path can represent a maximum that consumes any lesser available amount, especially for All. Do not turn a fixed exact cost into an up-to cap without evidence.
+The repo is intentionally a pre-release scaffold: the FOMOD describes the three settings, but no game patch is shipped yet. The inspected native data stores a fixed product amount and has no explicit maximum, available-quantity, or All selector. Runtime semantics have not been tested, so do not turn a fixed exact cost into an up-to cap or populate the payload without evidence.

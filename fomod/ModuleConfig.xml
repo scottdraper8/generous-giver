@@ -7,21 +7,21 @@
         <group name="Choose one limit" type="SelectExactlyOne">
           <plugins>
             <plugin name="5x">
-              <description>Offer up to five compatible gifts in one interaction.</description>
+              <description>Offer up to five Korvax Casing items in the targeted Korvax gift interaction.</description>
               <typeDescriptor>
                 <type name="Recommended" />
               </typeDescriptor>
               <files />
             </plugin>
             <plugin name="10x">
-              <description>Offer up to ten compatible gifts in one interaction.</description>
+              <description>Offer up to ten Korvax Casing items in the targeted Korvax gift interaction.</description>
               <typeDescriptor>
                 <type name="Optional" />
               </typeDescriptor>
               <files />
             </plugin>
             <plugin name="All">
-              <description>Offer all compatible gifts currently available to the interaction.</description>
+              <description>Offer all compatible gifts (Korvax Casing items) currently available to the targeted Korvax gift interaction.</description>
               <typeDescriptor>
                 <type name="Optional" />
               </typeDescriptor>
