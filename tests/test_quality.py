@@ -50,6 +50,46 @@ class RepositoryQualityTests(unittest.TestCase):
     def test_workflow_and_python_dependencies_are_pinned(self) -> None:
         self.assertEqual(quality.pin_issues(), [])
 
+    def test_locked_pre_commit_meets_configured_minimum(self) -> None:
+        original = quality.ROOT
+        try:
+            with tempfile.TemporaryDirectory() as temporary:
+                temporary_root = Path(temporary)
+                workflow_directory = temporary_root / ".github" / "workflows"
+                workflow_directory.mkdir(parents=True)
+                shutil.copy2(
+                    ROOT / ".github" / "workflows" / "quality.yml",
+                    workflow_directory / "quality.yml",
+                )
+                shutil.copy2(ROOT / "requirements.txt", temporary_root / "requirements.txt")
+                config_lines = (
+                    (ROOT / ".pre-commit-config.yaml").read_text(encoding="utf-8").splitlines()
+                )
+                minimum_index = next(
+                    index
+                    for index, line in enumerate(config_lines)
+                    if line.startswith("minimum_pre_commit_version:")
+                )
+                config_lines[minimum_index] = 'minimum_pre_commit_version: "99.0.0"'
+                (temporary_root / ".pre-commit-config.yaml").write_text(
+                    "\n".join(config_lines) + "\n", encoding="utf-8"
+                )
+                quality.ROOT = temporary_root
+                issues = quality.pin_issues()
+        finally:
+            quality.ROOT = original
+
+        locked_version = next(
+            line.removesuffix("\\").strip().split("==", 1)[1]
+            for line in (ROOT / "requirements.txt").read_text(encoding="utf-8").splitlines()
+            if line.strip().lower().startswith("pre-commit==")
+        )
+        self.assertIn(
+            "requirements.txt pre-commit pin "
+            f"{locked_version} is below .pre-commit-config.yaml minimum 99.0.0",
+            issues,
+        )
+
     def test_dependabot_opens_weekly_pull_requests_for_pinned_dependencies(self) -> None:
         config = yaml.safe_load((ROOT / ".github" / "dependabot.yml").read_text(encoding="utf-8"))
         updates = {entry["package-ecosystem"]: entry for entry in config["updates"]}

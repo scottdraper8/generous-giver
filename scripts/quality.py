@@ -219,6 +219,7 @@ def pin_issues() -> list[str]:
     if not requirements.exists():
         return issues + ["requirements.txt hash lock is missing"]
     package_count = 0
+    pre_commit_pins: list[str] = []
     current_has_hash = False
     for number, raw_line in enumerate(requirements.read_text(encoding="utf-8").splitlines(), 1):
         line = raw_line.strip()
@@ -236,6 +237,9 @@ def pin_issues() -> list[str]:
         package_line = line.removesuffix("\\").rstrip()
         if not PIN_LINE.fullmatch(package_line):
             issues.append(f"requirements.txt:{number}: dependency must use an exact == version")
+        pre_commit_match = re.fullmatch(r"(?i)pre[-_]commit==(\d+\.\d+\.\d+)", package_line)
+        if pre_commit_match is not None:
+            pre_commit_pins.append(pre_commit_match.group(1))
         if package_count and not current_has_hash:
             issues.append(f"requirements.txt:{number}: previous dependency has no SHA-256 hash")
         package_count += 1
@@ -244,11 +248,33 @@ def pin_issues() -> list[str]:
         issues.append("requirements.txt: final dependency has no SHA-256 hash")
     if package_count == 0:
         issues.append("requirements.txt must pin at least the pre-commit toolchain")
-    if not any(
-        re.match(r"(?i)^pre[-_]commit==4\.6\.2", line.strip())
-        for line in requirements.read_text(encoding="utf-8").splitlines()
-    ):
-        issues.append("requirements.txt must pin pre-commit 4.6.2")
+    if len(pre_commit_pins) != 1:
+        issues.append("requirements.txt must contain exactly one exact pre-commit pin")
+    else:
+        pre_commit_config = ROOT / ".pre-commit-config.yaml"
+        try:
+            config = yaml.safe_load(pre_commit_config.read_text(encoding="utf-8"))
+        except (OSError, yaml.YAMLError) as exc:
+            issues.append(f".pre-commit-config.yaml cannot be checked: {exc}")
+        else:
+            minimum_version = (
+                config.get("minimum_pre_commit_version") if isinstance(config, dict) else None
+            )
+            if not isinstance(minimum_version, str) or not re.fullmatch(
+                r"\d+\.\d+\.\d+", minimum_version
+            ):
+                issues.append(
+                    ".pre-commit-config.yaml must specify an exact minimum_pre_commit_version"
+                )
+            else:
+                locked_parts = tuple(int(part) for part in pre_commit_pins[0].split("."))
+                minimum_parts = tuple(int(part) for part in minimum_version.split("."))
+                if locked_parts < minimum_parts:
+                    issues.append(
+                        "requirements.txt pre-commit pin "
+                        f"{pre_commit_pins[0]} is below .pre-commit-config.yaml minimum "
+                        f"{minimum_version}"
+                    )
     return issues
 
 
