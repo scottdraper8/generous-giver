@@ -1,21 +1,21 @@
 # Generous Giver
 
-A No Man's Sky data mod intended to let a player offer multiple eligible gifts to an alien in one interaction. The FOMOD is planned to offer **5x**, **10x**, and **All** limits.
+A No Man's Sky data mod intended to change only the Korvax **Offer a gift** choice in the `EXP_NPC_SECONDARY` interaction shown in the project reference. The FOMOD is planned to offer **5x**, **10x**, and **All** limits for that choice.
 
-> **Development scaffold only — not an installable or release-ready mod.** The FOMOD currently defines the settings screen but contains no game payload. The amount/cost behavior and the `All` mode must be validated against the current game before any payload is added or distributed.
+> **Development scaffold only — not an installable or release-ready mod.** The FOMOD currently defines the settings screen but contains no game payload. The inspected native cost data stores a fixed amount and exposes no explicit up-to/All selector; runtime behavior and inventory access have not been tested.
 
 ## Intended behavior
 
-- Extend the existing alien gift interaction rather than add an unrelated menu or runtime hook.
-- Offer up to the selected cap from the inventories the game makes available to that interaction. If the selected cap is 10 and the game can see 7 compatible gifts, offer 7; if it can see 11, offer 10.
+- Extend only the targeted Korvax gift action rather than add a menu or runtime hook.
+- Offer up to the selected cap from inventories the game makes available to that interaction. If the selected cap is 10 and the game can see 7 compatible gifts, offer 7; if it can see 11, offer 10.
 - `All` means all compatible gifts currently available to that interaction.
-- Leave all non-gift actions and unrelated costs unchanged.
+- Leave every sibling option, shared cost definition, reward, and progression effect unchanged.
 - Ship a FOMOD installer with mutually exclusive 5x, 10x, and All choices.
 - Prefer a narrow loose-data patch. No DLL, executable injection, or extra runtime process is part of the design.
 
 ## Current investigation
 
-The current local game data exposes the alien dialogue in `METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN` and item costs in `METADATA/REALITY/TABLES/COSTTABLE.MBIN`. Cost IDs include the Gek, Korvax, and Vy'keen gift tiers. Those costs are referenced outside the simple gift prompt too, so changing their shared definitions blindly could alter unrelated interactions. See the [cost-reference investigation](docs/cost-reference-investigation.md) for the observed mappings, reference counts, and unresolved runtime questions.
+The local build's target option is `ALL_REQUEST_STD_LOW` in `EXP_NPC_SECONDARY`; it references `KORVAXGIFT1`, grants `SEC_STDLOW_EXP`, and charges one `EXP_CURIO1` (Korvax Casing). That cost ID is shared outside this option, so changing its definition globally could alter unrelated interactions. The serialized fields do not encode a dynamic cap or all-available amount. See the [cost-reference investigation](docs/cost-reference-investigation.md) for the target details, shared references, and remaining evidence gaps.
 
 See [the implementation contract](docs/implementation-contract.md) for the verified data boundary and the remaining acceptance checks. No game assets, extracted tables, saves, or compiler binaries are included here.
 
