@@ -6,6 +6,8 @@ import unittest
 from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
 
+import yaml
+
 ROOT = Path(__file__).resolve().parents[1]
 QUALITY_SPEC = spec_from_file_location("quality", ROOT / "scripts" / "quality.py")
 assert QUALITY_SPEC is not None and QUALITY_SPEC.loader is not None
@@ -22,6 +24,15 @@ class RepositoryQualityTests(unittest.TestCase):
 
     def test_workflow_and_python_dependencies_are_pinned(self) -> None:
         self.assertEqual(quality.pin_issues(), [])
+
+    def test_dependabot_opens_weekly_pull_requests_for_pinned_dependencies(self) -> None:
+        config = yaml.safe_load((ROOT / ".github" / "dependabot.yml").read_text(encoding="utf-8"))
+        updates = {entry["package-ecosystem"]: entry for entry in config["updates"]}
+        self.assertEqual(set(updates), {"pip", "github-actions"})
+        for ecosystem, update in updates.items():
+            with self.subTest(ecosystem=ecosystem):
+                self.assertEqual(update["schedule"]["interval"], "weekly")
+                self.assertGreater(update["open-pull-requests-limit"], 0)
 
     def test_fomod_rejects_unvalidated_payload_files(self) -> None:
         original = quality.ROOT
