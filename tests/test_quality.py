@@ -19,6 +19,31 @@ class RepositoryQualityTests(unittest.TestCase):
     def test_fomod_has_the_three_exact_exclusive_choices_and_no_payload(self) -> None:
         self.assertEqual(quality.fomod_issues(), [])
 
+    def test_fomod_rejects_choice_descriptions_outside_target_scope(self) -> None:
+        original = quality.ROOT
+        try:
+            with tempfile.TemporaryDirectory() as temporary:
+                temporary_root = Path(temporary)
+                shutil.copytree(original / "fomod", temporary_root / "fomod")
+                config_path = temporary_root / "fomod" / "ModuleConfig.xml"
+                config_text = config_path.read_text(encoding="utf-8")
+                config_path.write_text(
+                    config_text.replace(
+                        "targeted Korvax gift interaction",
+                        "targeted non-Korvax interaction",
+                        1,
+                    ),
+                    encoding="utf-8",
+                )
+                quality.ROOT = temporary_root
+                issues = quality.fomod_issues()
+        finally:
+            quality.ROOT = original
+        self.assertIn(
+            "FOMOD 5x must stay scoped to the targeted Korvax gift interaction",
+            issues,
+        )
+
     def test_all_xml_and_text_files_pass_hygiene(self) -> None:
         self.assertEqual(quality.hygiene_issues(), [])
 

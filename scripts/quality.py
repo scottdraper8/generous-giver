@@ -172,6 +172,11 @@ def fomod_issues() -> list[str]:
             issues.append("10x must be described as an up-to cap")
         if "all compatible gifts" not in descriptions.get("All", ""):
             issues.append("All must describe the accessible compatible gifts")
+        for name, description in descriptions.items():
+            if "targeted Korvax gift interaction" not in description:
+                issues.append(
+                    f"FOMOD {name} must stay scoped to the targeted Korvax gift interaction"
+                )
         for plugin in groups[0].findall("./plugins/plugin"):
             if plugin.find("files") is None or list(plugin.find("files")):
                 issues.append(
