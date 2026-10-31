@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <moduleName>Generous Giver</moduleName>
+  <installSteps order="Explicit">
+    <installStep name="Gift limit">
+      <optionalFileGroups order="Explicit">
+        <group name="Choose one limit" type="SelectExactlyOne">
+          <plugins>
+            <plugin name="5x">
+              <description>Offer up to five compatible gifts in one interaction.</description>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+              <files />
+            </plugin>
+            <plugin name="10x">
+              <description>Offer up to ten compatible gifts in one interaction.</description>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+              <files />
+            </plugin>
+            <plugin name="All">
+              <description>Offer all compatible gifts currently available to the interaction.</description>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+              <files />
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+  </installSteps>
+</config>
