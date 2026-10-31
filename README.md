@@ -15,7 +15,7 @@ A No Man's Sky data mod intended to let a player offer multiple eligible gifts t
 
 ## Current investigation
 
-The current local game data exposes the alien dialogue in `METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN` and item costs in `METADATA/REALITY/TABLES/COSTTABLE.MBIN`. Cost IDs include the Gek, Korvax, and Vy'keen gift tiers. Those costs are referenced outside the simple gift prompt too, so changing their shared definitions blindly could alter unrelated interactions.
+The current local game data exposes the alien dialogue in `METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN` and item costs in `METADATA/REALITY/TABLES/COSTTABLE.MBIN`. Cost IDs include the Gek, Korvax, and Vy'keen gift tiers. Those costs are referenced outside the simple gift prompt too, so changing their shared definitions blindly could alter unrelated interactions. See the [cost-reference investigation](docs/cost-reference-investigation.md) for the observed mappings, reference counts, and unresolved runtime questions.
 
 See [the implementation contract](docs/implementation-contract.md) for the verified data boundary and the remaining acceptance checks. No game assets, extracted tables, saves, or compiler binaries are included here.
 
@@ -23,7 +23,7 @@ See [the implementation contract](docs/implementation-contract.md) for the verif
 
 Requirements:
 
-- Python 3.13.18 for repository checks
+- Python 3.13 for repository checks; Python tooling is version- and hash-locked in [`requirements.txt`](requirements.txt)
 - `pre-commit`, Ruff, and pip-audit with exact versions and hashes in [`requirements.txt`](requirements.txt)
 
 Set up and run all checks (commands shown for Linux/macOS):
