@@ -5,9 +5,10 @@
     <installStep name="Gift amount">
       <optionalFileGroups order="Explicit">
         <group name="Choose an exact amount" type="SelectExactlyOne">
-          <plugins>
+          <plugins order="Explicit">
             <plugin name="5">
-              <description>Consume exactly 5 matching items and grant +5 standing in the existing Gek, Korvax, and Vy'keen standard and outlaw standing-gift conversations.</description>
+              <description>Give 5 gifts and recieve 5 standing. Works for all alien races.</description>
+              <image path="fomod/images/korvax-5.jpg" />
               <typeDescriptor>
                 <type name="Recommended" />
               </typeDescriptor>
@@ -16,7 +17,8 @@
               </files>
             </plugin>
             <plugin name="10">
-              <description>Consume exactly 10 matching items and grant +10 standing in the existing Gek, Korvax, and Vy'keen standard and outlaw standing-gift conversations.</description>
+              <description>Give 10 gifts and recieve 10 standing. Works for all alien races.</description>
+              <image path="fomod/images/korvax-10.jpg" />
               <typeDescriptor>
                 <type name="Optional" />
               </typeDescriptor>
@@ -25,7 +27,8 @@
               </files>
             </plugin>
             <plugin name="15">
-              <description>Consume exactly 15 matching items and grant +15 standing in the existing Gek, Korvax, and Vy'keen standard and outlaw standing-gift conversations.</description>
+              <description>Give 15 gifts and recieve 15 standing. Works for all alien races.</description>
+              <image path="fomod/images/vykeen-15.jpg" />
               <typeDescriptor>
                 <type name="Optional" />
               </typeDescriptor>
@@ -34,7 +37,8 @@
               </files>
             </plugin>
             <plugin name="20">
-              <description>Consume exactly 20 matching items and grant +20 standing in the existing Gek, Korvax, and Vy'keen standard and outlaw standing-gift conversations.</description>
+              <description>Give 20 gifts and recieve 20 standing. Works for all alien races.</description>
+              <image path="fomod/images/gek-20.jpg" />
               <typeDescriptor>
                 <type name="Optional" />
               </typeDescriptor>
