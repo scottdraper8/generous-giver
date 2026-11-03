@@ -1,46 +1,33 @@
 minimum_pre_commit_version: "4.6.2"
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-yaml
+        files: ^\.github/workflows/.*\.ya?ml$
+        types: [file]
+      - id: check-xml
+        files: (?i)^fomod/.*\.(xml|exml)$
+        types: [file]
   - repo: local
     hooks:
-      - id: python-lint
-        name: Python lint
-        entry: ruff check scripts tests
-        language: system
-        pass_filenames: false
-        always_run: true
-      - id: python-format
-        name: Python formatting
-        entry: ruff format --check scripts tests
-        language: system
-        pass_filenames: false
-        always_run: true
-      - id: repository-hygiene
-        name: Repository hygiene and XML validity
-        entry: python3 scripts/quality.py hygiene
-        language: system
-        pass_filenames: false
-        always_run: true
-      - id: fomod-contract
-        name: FOMOD settings contract
-        entry: python3 scripts/quality.py fomod
-        language: system
-        pass_filenames: false
-        always_run: true
-      - id: exact-dependency-pins
-        name: Exact dependency and action pins
-        entry: python3 scripts/quality.py pins
-        language: system
-        pass_filenames: false
-        always_run: true
-      - id: no-hook-bypass-or-inline-suppression
-        name: No hook bypasses or inline suppressions
-        entry: python3 scripts/quality.py policy
-        language: system
-        pass_filenames: false
-        always_run: true
-      - id: unit-tests
-        name: Repository quality tests
-        entry: python3 -m unittest discover --start-directory tests --verbose
-        language: system
-        pass_filenames: false
-        always_run: true
+      - id: prettier
+        name: Prettier (Markdown)
+        entry: prettier --write --print-width 80 --prose-wrap always
+        language: node
+        language_version: "26.12.1"
+        types: [markdown]
+        additional_dependencies: [prettier@3.9.9]
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.24.0
+    hooks:
+      - id: markdownlint-cli2
+        language_version: "26.12.1"

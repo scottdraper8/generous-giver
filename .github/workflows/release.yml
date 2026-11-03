@@ -1,0 +1,166 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - initial-release
+    paths:
+      - fomod/info.xml
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: Version to release; must match fomod/info.xml.
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  validate-version:
+    name: Validate release version and package
+    runs-on: ubuntu-24.04
+    outputs:
+      publish: ${{ steps.version.outputs.publish }}
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Check out the pushed commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Check for a new version and validate the FOMOD package
+        id: version
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+          RELEASE_VERSION: ${{ inputs.release_version }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          import subprocess
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          def read_version(xml_text):
+              root = ET.fromstring(xml_text)
+              version = root.findtext("Version")
+              if version is None or not re.fullmatch(r"\d+\.\d+(?:\.\d+)?", version):
+                  raise SystemExit(f"Unsupported or missing release version: {version!r}")
+              return version
+
+          event_name = os.environ["EVENT_NAME"]
+          current_xml = Path("fomod/info.xml").read_text(encoding="utf-8")
+          current = read_version(current_xml)
+          output = Path(os.environ["GITHUB_OUTPUT"])
+
+          if event_name == "workflow_dispatch":
+              if os.environ["REF_NAME"] != "main":
+                  raise SystemExit("Manual releases must be run from main.")
+              requested = os.environ["RELEASE_VERSION"]
+              if requested != current:
+                  raise SystemExit(
+                      f"Requested release {requested!r} does not match FOMOD version {current!r}."
+                  )
+          elif event_name == "push":
+              before = os.environ["BEFORE_SHA"]
+              if not before or set(before) == {"0"}:
+                  print("::notice::No prior commit is available for comparison; release skipped.")
+                  output.write_text(f"publish=false\nversion={current}\n", encoding="utf-8")
+                  raise SystemExit(0)
+
+              previous_xml = subprocess.run(
+                  ["git", "show", f"{before}:fomod/info.xml"],
+                  check=True,
+                  capture_output=True,
+                  text=True,
+              ).stdout
+              previous = read_version(previous_xml)
+
+              def version_tuple(value):
+                  parts = [int(part) for part in value.split(".")]
+                  return tuple((parts + [0, 0, 0])[:3])
+
+              if current == previous or version_tuple(current) == version_tuple(previous):
+                  print(f"::notice::FOMOD version remains {current}; release skipped.")
+                  output.write_text(f"publish=false\nversion={current}\n", encoding="utf-8")
+                  raise SystemExit(0)
+
+              if version_tuple(current) <= version_tuple(previous):
+                  raise SystemExit(
+                      f"Release version must increase: {previous} -> {current}"
+                  )
+          else:
+              raise SystemExit(f"Unsupported workflow event: {event_name}")
+
+          config_path = Path("fomod/ModuleConfig.xml")
+          config = ET.parse(config_path).getroot()
+          references = []
+          for element in config.iter():
+              if element.tag == "image":
+                  references.append(element.attrib["path"])
+              elif element.tag == "folder":
+                  references.append(element.attrib["source"])
+
+          for reference in references:
+              path = Path(reference)
+              if path.is_absolute() or ".." in path.parts or not path.exists():
+                  raise SystemExit(f"Invalid or missing FOMOD reference: {reference}")
+
+          payloads = sorted(Path("fomod").rglob("*.EXML"))
+          if not payloads:
+              raise SystemExit("No EXML payload files were found.")
+          for payload in payloads:
+              ET.parse(payload)
+
+          output.write_text(f"publish=true\nversion={current}\n", encoding="utf-8")
+          print(f"Validated FOMOD package for release v{current}.")
+          PY
+
+  publish:
+    name: Build and publish GitHub Release
+    needs: validate-version
+    if: needs.validate-version.outputs.publish == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Check out the pushed commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Package the FOMOD installer
+        env:
+          VERSION: ${{ needs.validate-version.outputs.version }}
+        run: |
+          set -euo pipefail
+          asset="GenerousGiver-${VERSION}.zip"
+          zip -X -r "$asset" fomod
+          zip -T "$asset"
+          unzip -Z1 "$asset" | grep -Fx 'fomod/info.xml'
+
+      - name: Create the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ needs.validate-version.outputs.version }}
+        run: |
+          set -euo pipefail
+          tag="v${VERSION}"
+          if tag_ref="$(git ls-remote --exit-code --refs origin "refs/tags/${tag}")"; then
+            echo "Release tag ${tag} already exists." >&2
+            exit 1
+          else
+            status=$?
+            if [ "$status" -ne 2 ]; then
+              echo "Could not check remote tag ${tag}." >&2
+              exit "$status"
+            fi
+          fi
+          gh release create "$tag" "GenerousGiver-${VERSION}.zip" \
+            --target "$GITHUB_SHA" \
+            --title "Generous Giver ${VERSION}" \
+            --generate-notes

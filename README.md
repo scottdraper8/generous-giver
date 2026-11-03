@@ -1,47 +1,65 @@
+<div align="center">
+
 # Generous Giver
 
-A No Man's Sky data mod intended to change only the Korvax **Offer a gift** choice in the `EXP_NPC_SECONDARY` interaction shown in the project reference. The FOMOD is planned to offer **5x**, **10x**, and **All** limits for that choice.
+![No Man's Sky 7.13](assets/badges/nms-version.svg)
+![FOMOD 5.0](assets/badges/fomod-version.svg)
+![Nexus Mods 0](assets/badges/nexus-downloads.svg)
 
-> **Development scaffold only — not an installable or release-ready mod.** The FOMOD currently defines the settings screen but contains no game payload. The inspected native cost data stores a fixed amount and exposes no explicit up-to/All selector; runtime behavior and inventory access have not been tested.
+---
 
-## Intended behavior
+Mod for No Man's Sky that allows players to offer a configurable amount of alien
+gifts in one interaction, while also allowing the user to choose if they want
+the dialogue screen with the alien to stay open.
 
-- Extend only the targeted Korvax gift action rather than add a menu or runtime hook.
-- Offer up to the selected cap from inventories the game makes available to that interaction. If the selected cap is 10 and the game can see 7 compatible gifts, offer 7; if it can see 11, offer 10.
-- `All` means all compatible gifts currently available to that interaction.
-- Leave every sibling option, shared cost definition, reward, and progression effect unchanged.
-- Ship a FOMOD installer with mutually exclusive 5x, 10x, and All choices.
-- Prefer a narrow loose-data patch. No DLL, executable injection, or extra runtime process is part of the design.
+---
 
-## Current investigation
+<p align="center">
+  <kbd>
+    <img
+      alt="banner"
+      width="98%"
+      src="assets/banner.png"
+    />
+  </kbd>
+</p>
+</div>
 
-The local build's target option is `ALL_REQUEST_STD_LOW` in `EXP_NPC_SECONDARY`; it references `KORVAXGIFT1`, grants `SEC_STDLOW_EXP`, and charges one `EXP_CURIO1` (Korvax Casing). That cost ID is shared outside this option, so changing its definition globally could alter unrelated interactions. The serialized fields do not encode a dynamic cap or all-available amount. See the [cost-reference investigation](docs/cost-reference-investigation.md) for the target details, shared references, and remaining evidence gaps.
+## Downloading
 
-See [the implementation contract](docs/implementation-contract.md) for the verified data boundary and the remaining acceptance checks. No game assets, extracted tables, saves, or compiler binaries are included here.
+The only places this mod should be downloaded from are:
 
-## Development
+- [Nexus Mods](https://www.nexusmods.com/nomanssky/mods/4774)
+- [GitHub release page](https://github.com/scottdraper8/generous-giver/releases)
 
-Requirements:
+> [!WARNING]
+>
+> Official downloads are available only from Nexus Mods and GitHub Releases.
+> Please report copies found elsewhere so their license compliance can be
+> reviewed.
 
-- Python 3.13 for repository checks; Python tooling is version- and hash-locked in [`requirements.txt`](requirements.txt)
-- `pre-commit`, Ruff, and pip-audit with exact versions and hashes in [`requirements.txt`](requirements.txt)
+## Installing
 
-Set up and run all checks (commands shown for Linux/macOS):
+Install the archive with [Vortex](https://www.nexusmods.com/vortex) or
+[Amethyst Mod Manager](https://github.com/ChrisDKN/Amethyst-Mod-Manager). Choose
+a gift amount and dialogue behavior in the FOMOD, then deploy.
 
-```sh
-python3.13 -m venv .venv
-.venv/bin/python -m pip install --only-binary=:all: --require-hashes -r requirements.txt
-source .venv/bin/activate
-pre-commit install
-pre-commit run --all-files
-```
+<p align="center">
+  <kbd>
+    <img
+      alt="banner"
+      width="98%"
+      src="assets/fomod.png"
+    />
+  </kbd>
+</p>
 
-The hooks include repository-specific FOMOD, dependency-pin, policy, XML, and test checks. CI runs the same full hook suite on every push and pull request. See [AGENTS.md](AGENTS.md) and [CONTRIBUTING.md](CONTRIBUTING.md) for the non-bypassable development rules.
+---
 
-## Installation and compatibility
-
-There is no working mod payload to install yet. Do not install this repository into a game or publish it as a mod until the acceptance checks in the implementation contract pass. No Man's Sky is an unsupported, update-sensitive modding target; compatibility must be stated against a tested game build rather than inferred from a successful XML parse.
-
-## Ownership
-
-No Man's Sky, its data, and its assets belong to Hello Games. This repository does not include redistributed game data. The repository's own licensing terms have not yet been selected.
+> [!NOTE]
+>
+> This mod modifies the following files:
+>
+> - `METADATA/REALITY/TABLES/COSTTABLE.EXML`
+> - `METADATA/REALITY/TABLES/REWARDTABLE.EXML`
+> - `METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.EXML`

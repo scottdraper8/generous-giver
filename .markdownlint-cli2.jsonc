@@ -1,0 +1,7 @@
+{
+  "config": {
+    "default": true,
+    "MD033": false, // README uses inline HTML for its centered layout and badges.
+    "MD041": false // README starts with its opening HTML wrapper.
+  }
+}

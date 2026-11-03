@@ -2,7 +2,7 @@
 <fomod>
   <Name>Generous Giver</Name>
   <Author>scottdraper8</Author>
-  <Version>0.1.0</Version>
-  <Description>Development scaffold. No game payload is included yet.</Description>
+  <Version>7.13</Version>
+  <Description>Choose to give 5, 10, 15, or 20 gifts and gain the same amount of standing with all alien races.</Description>
   <Website>https://github.com/scottdraper8/generous-giver</Website>
 </fomod>
