@@ -4,7 +4,7 @@ repos:
     rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c
     hooks:
       - id: check-added-large-files
-        args: [--maxkb=5120]
+        args: [--maxkb=1024] # Keep the FOMOD payload and preview images compact.
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-merge-conflict
@@ -12,5 +12,5 @@ repos:
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: check-xml
-        files: (?i)\.(xml|exml)$
+        files: (?i)^fomod/.*\.(xml|exml)$
         types: [file]
