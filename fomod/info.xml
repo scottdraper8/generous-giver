@@ -3,6 +3,6 @@
   <Name>Generous Giver</Name>
   <Author>scottdraper8</Author>
   <Version>0.1.0</Version>
-  <Description>Development scaffold. No game payload is included yet.</Description>
+  <Description>A No Man's Sky mod for exact 5, 10, 15, or 20 item Gek, Korvax, and Vy'keen standing gifts. Candidate payload files are included, but runtime validation is in progress and this is not a release-ready package.</Description>
   <Website>https://github.com/scottdraper8/generous-giver</Website>
 </fomod>

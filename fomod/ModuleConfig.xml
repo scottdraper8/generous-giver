@@ -2,30 +2,45 @@
 <config>
   <moduleName>Generous Giver</moduleName>
   <installSteps order="Explicit">
-    <installStep name="Gift limit">
+    <installStep name="Gift amount">
       <optionalFileGroups order="Explicit">
-        <group name="Choose one limit" type="SelectExactlyOne">
+        <group name="Choose an exact amount" type="SelectExactlyOne">
           <plugins>
-            <plugin name="5x">
-              <description>Offer up to five Korvax Casing items in the targeted Korvax gift interaction.</description>
+            <plugin name="5">
+              <description>Consume exactly 5 matching items and grant +5 standing in the existing Gek, Korvax, and Vy'keen standard and outlaw standing-gift conversations.</description>
               <typeDescriptor>
                 <type name="Recommended" />
               </typeDescriptor>
-              <files />
+              <files>
+                <folder source="fomod/files/5" destination="GAMEDATA/MODS/GenerousGiver" />
+              </files>
             </plugin>
-            <plugin name="10x">
-              <description>Offer up to ten Korvax Casing items in the targeted Korvax gift interaction.</description>
+            <plugin name="10">
+              <description>Consume exactly 10 matching items and grant +10 standing in the existing Gek, Korvax, and Vy'keen standard and outlaw standing-gift conversations.</description>
               <typeDescriptor>
                 <type name="Optional" />
               </typeDescriptor>
-              <files />
+              <files>
+                <folder source="fomod/files/10" destination="GAMEDATA/MODS/GenerousGiver" />
+              </files>
             </plugin>
-            <plugin name="All">
-              <description>Offer all compatible gifts (Korvax Casing items) currently available to the targeted Korvax gift interaction.</description>
+            <plugin name="15">
+              <description>Consume exactly 15 matching items and grant +15 standing in the existing Gek, Korvax, and Vy'keen standard and outlaw standing-gift conversations.</description>
               <typeDescriptor>
                 <type name="Optional" />
               </typeDescriptor>
-              <files />
+              <files>
+                <folder source="fomod/files/15" destination="GAMEDATA/MODS/GenerousGiver" />
+              </files>
+            </plugin>
+            <plugin name="20">
+              <description>Consume exactly 20 matching items and grant +20 standing in the existing Gek, Korvax, and Vy'keen standard and outlaw standing-gift conversations.</description>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+              <files>
+                <folder source="fomod/files/20" destination="GAMEDATA/MODS/GenerousGiver" />
+              </files>
             </plugin>
           </plugins>
         </group>
