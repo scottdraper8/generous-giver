@@ -1,0 +1,46 @@
+minimum_pre_commit_version: "4.6.2"
+repos:
+  - repo: local
+    hooks:
+      - id: python-lint
+        name: Python lint
+        entry: ruff check scripts tests
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: python-format
+        name: Python formatting
+        entry: ruff format --check scripts tests
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: repository-hygiene
+        name: Repository hygiene and XML validity
+        entry: python3 scripts/quality.py hygiene
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: fomod-contract
+        name: FOMOD settings contract
+        entry: python3 scripts/quality.py fomod
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: exact-dependency-pins
+        name: Exact dependency and action pins
+        entry: python3 scripts/quality.py pins
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: no-hook-bypass-or-inline-suppression
+        name: No hook bypasses or inline suppressions
+        entry: python3 scripts/quality.py policy
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: unit-tests
+        name: Repository quality tests
+        entry: python3 -m unittest discover --start-directory tests --verbose
+        language: system
+        pass_filenames: false
+        always_run: true

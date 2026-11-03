@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fomod>
+  <Name>Generous Giver</Name>
+  <Author>scottdraper8</Author>
+  <Version>0.1.0</Version>
+  <Description>Development scaffold. No game payload is included yet.</Description>
+  <Website>https://github.com/scottdraper8/generous-giver</Website>
+</fomod>

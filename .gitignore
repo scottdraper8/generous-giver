@@ -1,0 +1,20 @@
+# Python tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Generated mod packages and extracted game data
+package/
+artifacts/
+extracted/
+GAMEDATA/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
