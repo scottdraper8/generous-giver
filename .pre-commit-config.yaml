@@ -4,7 +4,7 @@ repos:
     rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c
     hooks:
       - id: check-added-large-files
-        args: [--maxkb=1024] # Keep the FOMOD payload and preview images compact.
+        args: [--maxkb=1024]
       - id: trailing-whitespace
       - id: end-of-file-fixer
       - id: check-merge-conflict
@@ -17,3 +17,17 @@ repos:
       - id: check-xml
         files: (?i)^fomod/.*\.(xml|exml)$
         types: [file]
+  - repo: local
+    hooks:
+      - id: prettier
+        name: Prettier (Markdown)
+        entry: prettier --write --print-width 80 --prose-wrap always
+        language: node
+        language_version: "26.12.1"
+        types: [markdown]
+        additional_dependencies: [prettier@3.9.9]
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.24.0
+    hooks:
+      - id: markdownlint-cli2
+        language_version: "26.12.1"

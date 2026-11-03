@@ -6,6 +6,12 @@ on:
       - initial-release
     paths:
       - fomod/info.xml
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: Version to release; must match fomod/info.xml.
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -28,6 +34,9 @@ jobs:
         id: version
         env:
           BEFORE_SHA: ${{ github.event.before }}
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+          RELEASE_VERSION: ${{ inputs.release_version }}
         run: |
           python3 - <<'PY'
           import os
@@ -43,37 +52,49 @@ jobs:
                   raise SystemExit(f"Unsupported or missing release version: {version!r}")
               return version
 
-          before = os.environ["BEFORE_SHA"]
+          event_name = os.environ["EVENT_NAME"]
           current_xml = Path("fomod/info.xml").read_text(encoding="utf-8")
           current = read_version(current_xml)
           output = Path(os.environ["GITHUB_OUTPUT"])
 
-          if not before or set(before) == {"0"}:
-              print("::notice::No prior commit is available for comparison; release skipped.")
-              output.write_text(f"publish=false\nversion={current}\n", encoding="utf-8")
-              raise SystemExit(0)
+          if event_name == "workflow_dispatch":
+              if os.environ["REF_NAME"] != "main":
+                  raise SystemExit("Manual releases must be run from main.")
+              requested = os.environ["RELEASE_VERSION"]
+              if requested != current:
+                  raise SystemExit(
+                      f"Requested release {requested!r} does not match FOMOD version {current!r}."
+                  )
+          elif event_name == "push":
+              before = os.environ["BEFORE_SHA"]
+              if not before or set(before) == {"0"}:
+                  print("::notice::No prior commit is available for comparison; release skipped.")
+                  output.write_text(f"publish=false\nversion={current}\n", encoding="utf-8")
+                  raise SystemExit(0)
 
-          previous_xml = subprocess.run(
-              ["git", "show", f"{before}:fomod/info.xml"],
-              check=True,
-              capture_output=True,
-              text=True,
-          ).stdout
-          previous = read_version(previous_xml)
+              previous_xml = subprocess.run(
+                  ["git", "show", f"{before}:fomod/info.xml"],
+                  check=True,
+                  capture_output=True,
+                  text=True,
+              ).stdout
+              previous = read_version(previous_xml)
 
-          def version_tuple(value):
-              parts = [int(part) for part in value.split(".")]
-              return tuple((parts + [0, 0, 0])[:3])
+              def version_tuple(value):
+                  parts = [int(part) for part in value.split(".")]
+                  return tuple((parts + [0, 0, 0])[:3])
 
-          if current == previous or version_tuple(current) == version_tuple(previous):
-              print(f"::notice::FOMOD version remains {current}; release skipped.")
-              output.write_text(f"publish=false\nversion={current}\n", encoding="utf-8")
-              raise SystemExit(0)
+              if current == previous or version_tuple(current) == version_tuple(previous):
+                  print(f"::notice::FOMOD version remains {current}; release skipped.")
+                  output.write_text(f"publish=false\nversion={current}\n", encoding="utf-8")
+                  raise SystemExit(0)
 
-          if version_tuple(current) <= version_tuple(previous):
-              raise SystemExit(
-                  f"Release version must increase: {previous} -> {current}"
-              )
+              if version_tuple(current) <= version_tuple(previous):
+                  raise SystemExit(
+                      f"Release version must increase: {previous} -> {current}"
+                  )
+          else:
+              raise SystemExit(f"Unsupported workflow event: {event_name}")
 
           config_path = Path("fomod/ModuleConfig.xml")
           config = ET.parse(config_path).getroot()
