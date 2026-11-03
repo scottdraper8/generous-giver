@@ -58,7 +58,7 @@ a gift amount and dialogue behavior in the FOMOD, then deploy.
 
 > [!NOTE]
 >
-> This mod overlays these files under `GAMEDATA/MODS/GenerousGiver/`:
+> This mod modifies the following files:
 >
 > - `METADATA/REALITY/TABLES/COSTTABLE.EXML`
 > - `METADATA/REALITY/TABLES/REWARDTABLE.EXML`
