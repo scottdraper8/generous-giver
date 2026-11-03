@@ -1,54 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
   <moduleName>Generous Giver</moduleName>
   <installSteps order="Explicit">
-    <installStep name="Gift amount">
+    <installStep name="Gift settings">
       <optionalFileGroups order="Explicit">
         <group name="Choose an exact amount" type="SelectExactlyOne">
           <plugins order="Explicit">
             <plugin name="5">
               <description>Give 5 gifts and recieve 5 standing. Works for all alien races.</description>
               <image path="fomod/images/korvax-5.jpg" />
-              <typeDescriptor>
-                <type name="Recommended" />
-              </typeDescriptor>
               <files>
                 <folder source="fomod/files/5" destination="GAMEDATA/MODS/GenerousGiver" />
               </files>
+              <conditionFlags>
+                <flag name="gift_amount">5</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
             </plugin>
             <plugin name="10">
               <description>Give 10 gifts and recieve 10 standing. Works for all alien races.</description>
               <image path="fomod/images/korvax-10.jpg" />
-              <typeDescriptor>
-                <type name="Optional" />
-              </typeDescriptor>
               <files>
                 <folder source="fomod/files/10" destination="GAMEDATA/MODS/GenerousGiver" />
               </files>
+              <conditionFlags>
+                <flag name="gift_amount">10</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
             </plugin>
             <plugin name="15">
               <description>Give 15 gifts and recieve 15 standing. Works for all alien races.</description>
               <image path="fomod/images/vykeen-15.jpg" />
-              <typeDescriptor>
-                <type name="Optional" />
-              </typeDescriptor>
               <files>
                 <folder source="fomod/files/15" destination="GAMEDATA/MODS/GenerousGiver" />
               </files>
+              <conditionFlags>
+                <flag name="gift_amount">15</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
             </plugin>
             <plugin name="20">
               <description>Give 20 gifts and recieve 20 standing. Works for all alien races.</description>
               <image path="fomod/images/gek-20.jpg" />
-              <typeDescriptor>
-                <type name="Optional" />
-              </typeDescriptor>
               <files>
                 <folder source="fomod/files/20" destination="GAMEDATA/MODS/GenerousGiver" />
               </files>
+              <conditionFlags>
+                <flag name="gift_amount">20</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+        <group name="Dialogue behavior" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Keep dialogue open">
+              <description>Leave the alien dialogue open after giving a gift.</description>
+              <conditionFlags>
+                <flag name="dialogue_mode">open</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Close dialogue">
+              <description>Close the alien dialogue after giving a gift.</description>
+              <conditionFlags>
+                <flag name="dialogue_mode">closed</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
             </plugin>
           </plugins>
         </group>
       </optionalFileGroups>
     </installStep>
   </installSteps>
+  <conditionalFileInstalls>
+    <patterns>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="5" />
+          <flagDependency flag="dialogue_mode" value="open" />
+        </dependencies>
+        <files>
+          <folder source="fomod/dialogue/5/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="5" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+        </dependencies>
+        <files>
+          <folder source="fomod/dialogue/5/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="10" />
+          <flagDependency flag="dialogue_mode" value="open" />
+        </dependencies>
+        <files>
+          <folder source="fomod/dialogue/10/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="10" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+        </dependencies>
+        <files>
+          <folder source="fomod/dialogue/10/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="15" />
+          <flagDependency flag="dialogue_mode" value="open" />
+        </dependencies>
+        <files>
+          <folder source="fomod/dialogue/15/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="15" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+        </dependencies>
+        <files>
+          <folder source="fomod/dialogue/15/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="20" />
+          <flagDependency flag="dialogue_mode" value="open" />
+        </dependencies>
+        <files>
+          <folder source="fomod/dialogue/20/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="20" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+        </dependencies>
+        <files>
+          <folder source="fomod/dialogue/20/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+    </patterns>
+  </conditionalFileInstalls>
 </config>

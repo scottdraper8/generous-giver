@@ -1,0 +1,1809 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Data template="cGcAlienPuzzleTable">
+  <Property name="Table">
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="?TRA_NPC_SECONDARY" _index="0">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="0">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="1">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="2">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="3">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="4">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="5">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="6">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="7">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="8">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="9">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="10">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="11">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="12">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="13">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="14">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="15">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="16">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="17">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="18">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="19">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="20">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="21">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="22">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="23">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="24">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="25">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="26">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="27">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="28">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="29">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="30">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="31">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="32">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="33">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="34">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="35">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="36">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="37">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="39">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="40">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="41">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="42">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="43">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="44">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="45">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="46">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="TRA_NPC_SECONDARY" _index="47">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="0">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="1">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="2">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="3">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="4">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="5">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="6">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="7">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="8">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="9">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="10">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="11">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="12">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="13">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="14">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="15">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="16">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="17">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="18">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="19">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="20">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="21">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="22">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="23">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="24">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="25">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="26">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="27">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="28">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="29">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="30">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="31">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="32">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="33">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="34">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="35">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="36">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="37">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="38">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="39">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="40">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="41">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="42">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="43">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="44">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="45">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="46">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="47">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="EXP_NPC_SECONDARY" _index="48">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="0">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="1">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="2">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="3">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="4">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="5">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="6">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="7">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="8">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="9">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="10">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="11">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="12">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="13">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="14">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="15">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="16">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="17">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="18">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="19">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="20">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="21">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="22">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="23">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="24">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="25">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="26">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="27">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="28">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="29">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="30">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="31">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="32">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="33">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="34">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="35">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="36">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="37">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="38">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="WAR_NPC_SECONDARY" _index="39">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="0">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="1">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="2">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="3">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="4">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="5">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="6">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="7">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="8">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_GEK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_GEK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="9">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="10">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="11">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="12">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="13">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="14">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="15">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="16">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="17">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_VYK_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_VYK_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="18">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="19">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="20">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="21">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="22">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="23">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="24">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="25">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="OUTLAW_SECONDARY" _index="26">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="2">
+          <Property name="Cost" value="GG_KOR_C_5" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_KOR_R_5" _index="0" />
+          </Property>
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>

@@ -89,7 +89,7 @@ jobs:
               if path.is_absolute() or ".." in path.parts or not path.exists():
                   raise SystemExit(f"Invalid or missing FOMOD reference: {reference}")
 
-          payloads = sorted(Path("fomod/files").rglob("*.EXML"))
+          payloads = sorted(Path("fomod").rglob("*.EXML"))
           if not payloads:
               raise SystemExit("No EXML payload files were found.")
           for payload in payloads:
