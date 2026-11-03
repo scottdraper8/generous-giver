@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Data template="cGcCostTable">
+  <Property name="ItemCostsTable">
+    <Property name="ItemCostsTable" value="GcCostTableEntry" _id="GG_GEK_C_10">
+      <Property name="Id" value="GG_GEK_C_10" />
+      <Property name="DisplayCost" value="true" />
+      <Property name="DontCharge" value="false" />
+      <Property name="HideOptionAndDisplayCostOnly" value="false" />
+      <Property name="DisplayOnlyCostIfCantAfford" value="false" />
+      <Property name="HideCostStringIfCanAfford" value="false" />
+      <Property name="RemoveOptionIfCantAfford" value="false" />
+      <Property name="InvertCanAffordOutcome" value="false" />
+      <Property name="MustAffordInCreative" value="false" />
+      <Property name="CommunityContributionValue" value="0" />
+      <Property name="CommunityContributionCapLocID" value="UI_COMMUNITY_CAP_REACHED" />
+      <Property name="CannotAffordOSDMsg" value="" />
+      <Property name="MissionMessageWhenCharged" value="" />
+      <Property name="Cost" value="GcCostProduct">
+        <Property name="GcCostProduct">
+          <Property name="Default" value="GcDefaultMissionProductEnum">
+            <Property name="DefaultProductType" value="None" />
+          </Property>
+          <Property name="Id" value="TRA_CURIO1" />
+          <Property name="Amount" value="10" />
+          <Property name="UseDefaultAmount" value="false" />
+          <Property name="TakeIDFromSeasonData" value="false" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="ItemCostsTable" value="GcCostTableEntry" _id="GG_KOR_C_10">
+      <Property name="Id" value="GG_KOR_C_10" />
+      <Property name="DisplayCost" value="true" />
+      <Property name="DontCharge" value="false" />
+      <Property name="HideOptionAndDisplayCostOnly" value="false" />
+      <Property name="DisplayOnlyCostIfCantAfford" value="false" />
+      <Property name="HideCostStringIfCanAfford" value="false" />
+      <Property name="RemoveOptionIfCantAfford" value="false" />
+      <Property name="InvertCanAffordOutcome" value="false" />
+      <Property name="MustAffordInCreative" value="false" />
+      <Property name="CommunityContributionValue" value="0" />
+      <Property name="CommunityContributionCapLocID" value="UI_COMMUNITY_CAP_REACHED" />
+      <Property name="CannotAffordOSDMsg" value="" />
+      <Property name="MissionMessageWhenCharged" value="" />
+      <Property name="Cost" value="GcCostProduct">
+        <Property name="GcCostProduct">
+          <Property name="Default" value="GcDefaultMissionProductEnum">
+            <Property name="DefaultProductType" value="None" />
+          </Property>
+          <Property name="Id" value="EXP_CURIO1" />
+          <Property name="Amount" value="10" />
+          <Property name="UseDefaultAmount" value="false" />
+          <Property name="TakeIDFromSeasonData" value="false" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="ItemCostsTable" value="GcCostTableEntry" _id="GG_VYK_C_10">
+      <Property name="Id" value="GG_VYK_C_10" />
+      <Property name="DisplayCost" value="true" />
+      <Property name="DontCharge" value="false" />
+      <Property name="HideOptionAndDisplayCostOnly" value="false" />
+      <Property name="DisplayOnlyCostIfCantAfford" value="false" />
+      <Property name="HideCostStringIfCanAfford" value="false" />
+      <Property name="RemoveOptionIfCantAfford" value="false" />
+      <Property name="InvertCanAffordOutcome" value="false" />
+      <Property name="MustAffordInCreative" value="false" />
+      <Property name="CommunityContributionValue" value="0" />
+      <Property name="CommunityContributionCapLocID" value="UI_COMMUNITY_CAP_REACHED" />
+      <Property name="CannotAffordOSDMsg" value="" />
+      <Property name="MissionMessageWhenCharged" value="" />
+      <Property name="Cost" value="GcCostProduct">
+        <Property name="GcCostProduct">
+          <Property name="Default" value="GcDefaultMissionProductEnum">
+            <Property name="DefaultProductType" value="None" />
+          </Property>
+          <Property name="Id" value="WAR_CURIO1" />
+          <Property name="Amount" value="10" />
+          <Property name="UseDefaultAmount" value="false" />
+          <Property name="TakeIDFromSeasonData" value="false" />
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>

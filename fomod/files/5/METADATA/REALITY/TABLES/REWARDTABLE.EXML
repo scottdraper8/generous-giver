@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Data template="cGcRewardTable">
+  <Property name="InteractionTable">
+    <Property name="InteractionTable" value="GcGenericRewardTableEntry" _id="GG_GEK_R_5">
+      <Property name="Id" value="GG_GEK_R_5" />
+      <Property name="List" value="GcRewardTableItemList">
+        <Property name="RewardChoice" value="GiveAll" />
+        <Property name="OverrideZeroSeed" value="false" />
+        <Property name="UseInventoryChoiceOverride" value="false" />
+        <Property name="IncrementStat" value="" />
+        <Property name="List">
+          <Property name="List" value="GcRewardTableItem" _index="0">
+            <Property name="PercentageChance" value="100.000000" />
+            <Property name="LabelID" value="" />
+            <Property name="Reward" value="GcRewardStanding">
+              <Property name="GcRewardStanding">
+                <Property name="Race" value="GcAlienRace">
+                  <Property name="AlienRace" value="Traders" />
+                </Property>
+                <Property name="AmountMin" value="5" />
+                <Property name="AmountMax" value="5" />
+                <Property name="UseExpeditionEventSystemRace" value="false" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="InteractionTable" value="GcGenericRewardTableEntry" _id="GG_KOR_R_5">
+      <Property name="Id" value="GG_KOR_R_5" />
+      <Property name="List" value="GcRewardTableItemList">
+        <Property name="RewardChoice" value="GiveAll" />
+        <Property name="OverrideZeroSeed" value="false" />
+        <Property name="UseInventoryChoiceOverride" value="false" />
+        <Property name="IncrementStat" value="" />
+        <Property name="List">
+          <Property name="List" value="GcRewardTableItem" _index="0">
+            <Property name="PercentageChance" value="100.000000" />
+            <Property name="LabelID" value="" />
+            <Property name="Reward" value="GcRewardStanding">
+              <Property name="GcRewardStanding">
+                <Property name="Race" value="GcAlienRace">
+                  <Property name="AlienRace" value="Explorers" />
+                </Property>
+                <Property name="AmountMin" value="5" />
+                <Property name="AmountMax" value="5" />
+                <Property name="UseExpeditionEventSystemRace" value="false" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="InteractionTable" value="GcGenericRewardTableEntry" _id="GG_VYK_R_5">
+      <Property name="Id" value="GG_VYK_R_5" />
+      <Property name="List" value="GcRewardTableItemList">
+        <Property name="RewardChoice" value="GiveAll" />
+        <Property name="OverrideZeroSeed" value="false" />
+        <Property name="UseInventoryChoiceOverride" value="false" />
+        <Property name="IncrementStat" value="" />
+        <Property name="List">
+          <Property name="List" value="GcRewardTableItem" _index="0">
+            <Property name="PercentageChance" value="100.000000" />
+            <Property name="LabelID" value="" />
+            <Property name="Reward" value="GcRewardStanding">
+              <Property name="GcRewardStanding">
+                <Property name="Race" value="GcAlienRace">
+                  <Property name="AlienRace" value="Warriors" />
+                </Property>
+                <Property name="AmountMin" value="5" />
+                <Property name="AmountMax" value="5" />
+                <Property name="UseExpeditionEventSystemRace" value="false" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
+</Data>
