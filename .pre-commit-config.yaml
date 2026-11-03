@@ -11,6 +11,9 @@ repos:
       - id: check-case-conflict
       - id: mixed-line-ending
         args: [--fix=lf]
+      - id: check-yaml
+        files: ^\.github/workflows/.*\.ya?ml$
+        types: [file]
       - id: check-xml
         files: (?i)^fomod/.*\.(xml|exml)$
         types: [file]
