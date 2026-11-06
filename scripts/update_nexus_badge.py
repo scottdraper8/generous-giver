@@ -19,7 +19,10 @@ ICON_PATTERN = re.compile(
 def fetch_download_count() -> int:
     request = urllib.request.Request(
         API_URL,
-        headers={"Accept": "application/json", "User-Agent": "Generous-Giver badge updater"},
+        headers={
+            "Accept": "application/json",
+            "User-Agent": "Generous-Giver badge updater",
+        },
     )
     with urllib.request.urlopen(request, timeout=30) as response:
         payload = json.load(response)
