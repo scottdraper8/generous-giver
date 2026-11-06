@@ -47,37 +47,54 @@ def validate_fomod() -> list[Path]:
 
 
 def write_zip(path: Path, files: list[tuple[Path, Path]]) -> None:
-    with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+    with zipfile.ZipFile(
+        path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9
+    ) as archive:
         for source, archive_name in sorted(files, key=lambda pair: pair[1].as_posix()):
             if not source.is_file():
                 raise SystemExit(f"Archive input is not a file: {source}")
-            entry = zipfile.ZipInfo(archive_name.as_posix(), date_time=(1980, 1, 1, 0, 0, 0))
+            entry = zipfile.ZipInfo(
+                archive_name.as_posix(), date_time=(1980, 1, 1, 0, 0, 0)
+            )
             entry.compress_type = zipfile.ZIP_DEFLATED
             entry.external_attr = (stat.S_IFREG | 0o644) << 16
-            archive.writestr(entry, source.read_bytes(), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
+            archive.writestr(
+                entry,
+                source.read_bytes(),
+                compress_type=zipfile.ZIP_DEFLATED,
+                compresslevel=9,
+            )
 
     with zipfile.ZipFile(path) as archive:
         if archive.testzip() is not None:
             raise SystemExit(f"Invalid archive generated: {path.name}")
 
 
-def manual_variant_files(quantity: int, dialogue: str, folder_name: str) -> list[tuple[Path, Path]]:
+def manual_variant_files(
+    quantity: int, dialogue: str, folder_name: str
+) -> list[tuple[Path, Path]]:
     source_files = [
         FOMOD / "files" / str(quantity) / TABLES / "COSTTABLE.EXML",
         FOMOD / "files" / str(quantity) / TABLES / "REWARDTABLE.EXML",
-        FOMOD / "dialogue" / str(quantity) / dialogue / TABLES / "NMS_DIALOG_GCALIENPUZZLETABLE.EXML",
+        FOMOD
+        / "dialogue"
+        / str(quantity)
+        / dialogue
+        / TABLES
+        / "NMS_DIALOG_GCALIENPUZZLETABLE.EXML",
     ]
     if any(not path.is_file() for path in source_files):
         missing = next(path for path in source_files if not path.is_file())
         raise SystemExit(f"Missing standalone mod file: {missing.relative_to(ROOT)}")
     return [
-        (source, Path(folder_name) / TABLES / source.name)
-        for source in source_files
+        (source, Path(folder_name) / TABLES / source.name) for source in source_files
     ]
 
 
 def write_release_notes(output: Path, version: str, release_assets: list[str]) -> None:
-    base_url = f"https://github.com/scottdraper8/generous-giver/releases/download/v{version}"
+    base_url = (
+        f"https://github.com/scottdraper8/generous-giver/releases/download/v{version}"
+    )
 
     def link(asset: str, label: str) -> str:
         uploaded_name = asset.replace(" ", ".")
@@ -123,7 +140,11 @@ def main() -> None:
     installer_name = f"GenerousGiver-{version}.zip"
     write_zip(
         output / installer_name,
-        [(path, path.relative_to(ROOT)) for path in sorted(FOMOD.rglob("*")) if path.is_file()],
+        [
+            (path, path.relative_to(ROOT))
+            for path in sorted(FOMOD.rglob("*"))
+            if path.is_file()
+        ],
     )
 
     nexus_files = [
@@ -139,7 +160,9 @@ def main() -> None:
         for dialogue in ("open", "closed"):
             dialogue_title = dialogue.title()
             folder_name = f"Generous-Giver-{quantity}-Dialogue-{dialogue_title}"
-            archive_name = f"Generous Giver - {quantity} Gifts - Dialogue {dialogue_title}.zip"
+            archive_name = (
+                f"Generous Giver - {quantity} Gifts - Dialogue {dialogue_title}.zip"
+            )
             write_zip(
                 output / archive_name,
                 manual_variant_files(quantity, dialogue, folder_name),

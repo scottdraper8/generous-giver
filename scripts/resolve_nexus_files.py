@@ -9,6 +9,7 @@ import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
+from typing import Any, cast
 from urllib.parse import quote
 
 
@@ -16,7 +17,7 @@ API_BASE = "https://api.nexusmods.com/v3"
 MOD_ID = "7017976566438"
 
 
-def get_json(path: str, api_key: str) -> dict:
+def get_json(path: str, api_key: str) -> dict[str, Any]:
     request = urllib.request.Request(
         f"{API_BASE}{path}",
         headers={
@@ -27,9 +28,11 @@ def get_json(path: str, api_key: str) -> dict:
     )
     try:
         with urllib.request.urlopen(request, timeout=30) as response:
-            return json.load(response)
+            return cast(dict[str, Any], json.load(response))
     except urllib.error.HTTPError as error:
-        raise SystemExit(f"Nexus API request failed with HTTP {error.code}: {path}") from None
+        raise SystemExit(
+            f"Nexus API request failed with HTTP {error.code}: {path}"
+        ) from None
     except urllib.error.URLError as error:
         raise SystemExit(f"Nexus API request failed: {error.reason}") from None
 
@@ -51,7 +54,11 @@ def main() -> None:
 
     upload_matrix = []
     for expected in manifest["nexus_files"]:
-        matches = [item for item in existing_files if item.get("name") == expected["display_name"]]
+        matches = [
+            item
+            for item in existing_files
+            if item.get("name") == expected["display_name"]
+        ]
         if len(matches) != 1:
             raise SystemExit(
                 f"Expected exactly one existing Nexus file named {expected['display_name']!r}; "
@@ -60,16 +67,27 @@ def main() -> None:
 
         file_id = str(matches[0].get("id", ""))
         if not file_id.isdigit():
-            raise SystemExit(f"Nexus returned an invalid file ID for {expected['display_name']!r}.")
+            raise SystemExit(
+                f"Nexus returned an invalid file ID for {expected['display_name']!r}."
+            )
 
-        versions_response = get_json(f"/mod-files/{quote(file_id, safe='')}/versions", api_key)
+        versions_response = get_json(
+            f"/mod-files/{quote(file_id, safe='')}/versions", api_key
+        )
         versions = versions_response.get("data", {}).get("versions")
         if not isinstance(versions, list) or not versions:
-            raise SystemExit(f"Nexus returned no versions for {expected['display_name']!r}.")
+            raise SystemExit(
+                f"Nexus returned no versions for {expected['display_name']!r}."
+            )
 
-        already_uploaded = [item for item in versions if str(item.get("version")) == version]
+        already_uploaded = [
+            item for item in versions if str(item.get("version")) == version
+        ]
         if already_uploaded:
-            if any(item.get("category") != expected["category"] for item in already_uploaded):
+            if any(
+                item.get("category") != expected["category"]
+                for item in already_uploaded
+            ):
                 raise SystemExit(
                     f"The existing {expected['display_name']!r} version {version} has an unexpected "
                     "Nexus category. No files were uploaded."
@@ -92,7 +110,9 @@ def main() -> None:
 
     output = Path(os.environ["GITHUB_OUTPUT"])
     output.write_text(
-        "matrix=" + json.dumps(upload_matrix, separators=(",", ":")) + "\n"
+        "matrix="
+        + json.dumps(upload_matrix, separators=(",", ":"))
+        + "\n"
         + f"has_uploads={'true' if upload_matrix else 'false'}\n",
         encoding="utf-8",
     )
