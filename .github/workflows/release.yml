@@ -5,16 +5,25 @@ on:
     branches:
       - main
     paths:
-      - fomod/info.xml
+      - fomod/**
   workflow_dispatch:
     inputs:
       release_version:
         description: Version to release; must match fomod/info.xml.
         required: true
         type: string
+      publish_to_nexus:
+        description: Upload new versions to the existing Nexus files. Leave off for GitHub-only updates.
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
+
+concurrency:
+  group: generous-giver-release-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   validate-version:
@@ -22,6 +31,7 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       publish: ${{ steps.version.outputs.publish }}
+      publish_nexus: ${{ steps.version.outputs.publish_nexus }}
       version: ${{ steps.version.outputs.version }}
     steps:
       - name: Harden runner
@@ -43,6 +53,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           REF_NAME: ${{ github.ref_name }}
           RELEASE_VERSION: ${{ inputs.release_version }}
+          PUBLISH_TO_NEXUS: ${{ inputs.publish_to_nexus }}
         run: |
           python3 - <<'PY'
           import os
@@ -71,11 +82,16 @@ jobs:
                   raise SystemExit(
                       f"Requested release {requested!r} does not match FOMOD version {current!r}."
                   )
+              publish_nexus = os.environ["PUBLISH_TO_NEXUS"].lower() == "true"
           elif event_name == "push":
+              publish_nexus = True
               before = os.environ["BEFORE_SHA"]
               if not before or set(before) == {"0"}:
                   print("::notice::No prior commit is available for comparison; release skipped.")
-                  output.write_text(f"publish=false\nversion={current}\n", encoding="utf-8")
+                  output.write_text(
+                      f"publish=false\npublish_nexus=false\nversion={current}\n",
+                      encoding="utf-8",
+                  )
                   raise SystemExit(0)
 
               previous_xml = subprocess.run(
@@ -92,7 +108,10 @@ jobs:
 
               if current == previous or version_tuple(current) == version_tuple(previous):
                   print(f"::notice::FOMOD version remains {current}; release skipped.")
-                  output.write_text(f"publish=false\nversion={current}\n", encoding="utf-8")
+                  output.write_text(
+                      f"publish=false\npublish_nexus=false\nversion={current}\n",
+                      encoding="utf-8",
+                  )
                   raise SystemExit(0)
 
               if version_tuple(current) <= version_tuple(previous):
@@ -102,37 +121,18 @@ jobs:
           else:
               raise SystemExit(f"Unsupported workflow event: {event_name}")
 
-          config_path = Path("fomod/ModuleConfig.xml")
-          config = ET.parse(config_path).getroot()
-          references = []
-          for element in config.iter():
-              if element.tag == "image":
-                  references.append(element.attrib["path"])
-              elif element.tag == "folder":
-                  references.append(element.attrib["source"])
-
-          for reference in references:
-              path = Path(reference)
-              if path.is_absolute() or ".." in path.parts or not path.exists():
-                  raise SystemExit(f"Invalid or missing FOMOD reference: {reference}")
-
-          payloads = sorted(Path("fomod").rglob("*.EXML"))
-          if not payloads:
-              raise SystemExit("No EXML payload files were found.")
-          for payload in payloads:
-              ET.parse(payload)
-
-          output.write_text(f"publish=true\nversion={current}\n", encoding="utf-8")
+          output.write_text(
+              f"publish=true\npublish_nexus={str(publish_nexus).lower()}\nversion={current}\n",
+              encoding="utf-8",
+          )
           print(f"Validated FOMOD package for release v{current}.")
           PY
 
-  publish:
-    name: Build and publish GitHub Release
+  package:
+    name: Build release archives
     needs: validate-version
     if: needs.validate-version.outputs.publish == 'true'
     runs-on: ubuntu-24.04
-    permissions:
-      contents: write
     steps:
       - name: Harden runner
         uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
@@ -145,34 +145,151 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Package the FOMOD installer
+      - name: Build the FOMOD installer and standalone variants
+        id: package
         env:
           VERSION: ${{ needs.validate-version.outputs.version }}
         run: |
           set -euo pipefail
-          asset="GenerousGiver-${VERSION}.zip"
-          zip -X -r "$asset" fomod
-          zip -T "$asset"
-          unzip -Z1 "$asset" | grep -Fx 'fomod/info.xml'
+          assets_dir="$RUNNER_TEMP/generous-giver-release-assets"
+          mkdir -p "$assets_dir"
+          python3 scripts/build_release_assets.py "$assets_dir"
+          jq -e --arg version "$VERSION" '.version == $version and (.release_assets | length) == 9 and (.nexus_files | length) == 9' \
+            "$assets_dir/manifest.json" >/dev/null
 
-      - name: Create the GitHub Release
+      - name: Upload the generated archives for release jobs
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: generous-giver-release-assets
+          path: ${{ runner.temp }}/generous-giver-release-assets/
+          if-no-files-found: error
+          retention-days: 1
+
+  publish-github-release:
+    name: Create or update the GitHub Release
+    needs: [validate-version, package]
+    if: needs.validate-version.outputs.publish == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          disable-sudo: true
+          egress-policy: audit
+
+      - name: Download the release archives
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: generous-giver-release-assets
+          path: release-assets
+
+      - name: Create or update the GitHub Release assets
         env:
           GH_TOKEN: ${{ github.token }}
           VERSION: ${{ needs.validate-version.outputs.version }}
+          TARGET_SHA: ${{ github.sha }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           set -euo pipefail
           tag="v${VERSION}"
-          if tag_ref="$(git ls-remote --exit-code --refs origin "refs/tags/${tag}")"; then
-            echo "Release tag ${tag} already exists." >&2
+          mapfile -t filenames < <(jq -r '.release_assets[]' release-assets/manifest.json)
+          if [[ "${#filenames[@]}" -ne 9 ]]; then
+            echo "Expected one installer and eight optional archives." >&2
             exit 1
-          else
-            status=$?
-            if [ "$status" -ne 2 ]; then
-              echo "Could not check remote tag ${tag}." >&2
-              exit "$status"
-            fi
           fi
-          gh release create "$tag" "GenerousGiver-${VERSION}.zip" \
-            --target "$GITHUB_SHA" \
-            --title "Generous Giver ${VERSION}" \
-            --generate-notes
+          assets=()
+          for filename in "${filenames[@]}"; do
+            if [[ "$filename" == GenerousGiver-*.zip ]]; then
+              label="Generous Giver - All-in-One Installer"
+            else
+              label="${filename%.zip}"
+            fi
+            assets+=("release-assets/${filename}#${label}")
+          done
+          if gh release view "$tag" --repo "$REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$tag" "${assets[@]}" --repo "$REPOSITORY" --clobber
+            gh release edit "$tag" \
+              --repo "$REPOSITORY" \
+              --title "Generous Giver ${VERSION}" \
+              --notes-file release-assets/release-notes.md
+          else
+            gh release create "$tag" "${assets[@]}" \
+              --repo "$REPOSITORY" \
+              --target "$TARGET_SHA" \
+              --title "Generous Giver ${VERSION}" \
+              --notes-file release-assets/release-notes.md
+          fi
+
+  resolve-nexus:
+    name: Verify existing Nexus file entries
+    needs: [validate-version, package]
+    if: needs.validate-version.outputs.publish_nexus == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      matrix: ${{ steps.resolve.outputs.matrix }}
+      has_uploads: ${{ steps.resolve.outputs.has_uploads }}
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          disable-sudo: true
+          egress-policy: audit
+
+      - name: Check out the release scripts
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Download the release manifest
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: generous-giver-release-assets
+          path: release-assets
+
+      - name: Match exact existing names and find missing versions
+        id: resolve
+        env:
+          NEXUS_API_KEY: ${{ secrets.NEXUS_API_KEY }}
+        run: python3 scripts/resolve_nexus_files.py release-assets/manifest.json
+
+  publish-nexus:
+    name: Upload new versions to existing Nexus files
+    needs: [validate-version, package, resolve-nexus]
+    if: needs.validate-version.outputs.publish_nexus == 'true' && needs.resolve-nexus.outputs.has_uploads == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      actions: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.resolve-nexus.outputs.matrix) }}
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          disable-sudo: true
+          egress-policy: audit
+
+      - name: Download the release archives
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: generous-giver-release-assets
+          path: release-assets
+
+      - name: Upload a new version of the existing Nexus file
+        uses: Nexus-Mods/upload-action@98532f7670c27cbecc78fae03fa3e278147827e2 # v1.0.0-beta.11
+        with:
+          api_key: ${{ secrets.NEXUS_API_KEY }}
+          file_id: ${{ matrix.file_id }}
+          filename: release-assets/${{ matrix.archive }}
+          version: ${{ needs.validate-version.outputs.version }}
+          # Preserve each verified Nexus file's existing title and category.
+          display_name: ${{ matrix.display_name }}
+          category: ${{ matrix.category }}
+          update_mod_version: ${{ matrix.update_mod_version }}

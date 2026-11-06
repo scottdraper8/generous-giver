@@ -44,6 +44,15 @@ Install the archive with [Vortex](https://www.nexusmods.com/vortex) or
 [Amethyst Mod Manager](https://github.com/ChrisDKN/Amethyst-Mod-Manager). Choose
 a gift amount and dialogue behavior in the FOMOD, then deploy.
 
+Each GitHub release includes the all-in-one FOMOD installer and eight optional
+archives for installing without a mod manager. Choose exactly one optional
+archive for the gift amount and dialogue behavior you want.
+
+To install an optional archive manually, extract it into the game's
+`GAMEDATA/MODS` directory. The archive contains a folder named
+`Generous-Giver-<quantity>-Dialogue-<Open-or-Closed>` with the mod files inside.
+Do not install an optional archive alongside the FOMOD version.
+
 <p align="center">
   <kbd>
     <img
