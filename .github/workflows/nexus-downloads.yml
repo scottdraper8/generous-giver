@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: nexus-download-badge
@@ -26,6 +26,8 @@ jobs:
 
       - name: Check out main
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ssh-key: ${{ secrets.GENEROUS_GIVER_BADGE_DEPLOY_KEY }}
 
       - name: Fetch the public Nexus total and refresh the SVG
         run: python3 scripts/update_nexus_badge.py
