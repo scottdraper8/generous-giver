@@ -59,6 +59,7 @@ jobs:
           import os
           import re
           import subprocess
+          import sys
           import xml.etree.ElementTree as ET
           from pathlib import Path
 
@@ -73,6 +74,10 @@ jobs:
           current_xml = Path("fomod/info.xml").read_text(encoding="utf-8")
           current = read_version(current_xml)
           output = Path(os.environ["GITHUB_OUTPUT"])
+          subprocess.run(
+              [sys.executable, "scripts/build_release_assets.py", "--validate-only"],
+              check=True,
+          )
 
           if event_name == "workflow_dispatch":
               if os.environ["REF_NAME"] != "main":
@@ -222,10 +227,55 @@ jobs:
               --title "Generous Giver ${VERSION}" \
               --notes-file release-assets/release-notes.md
           fi
+          gh release view "$tag" \
+            --repo "$REPOSITORY" \
+            --json assets,body,isDraft,isPrerelease,name,tagName \
+            > "$RUNNER_TEMP/github-release.json"
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          assets_dir = Path("release-assets")
+          manifest = json.loads((assets_dir / "manifest.json").read_text(encoding="utf-8"))
+          release = json.loads(
+              (Path(os.environ["RUNNER_TEMP"]) / "github-release.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          version = os.environ["VERSION"]
+          if release["tagName"] != f"v{version}":
+              raise SystemExit("GitHub Release tag does not match the package version.")
+          if release["name"] != f"Generous Giver {version}":
+              raise SystemExit("GitHub Release title does not match the package version.")
+          expected_body = (assets_dir / "release-notes.md").read_text(encoding="utf-8").rstrip()
+          if release["body"].rstrip() != expected_body:
+              raise SystemExit("GitHub Release notes do not match the generated notes.")
+          if release["isDraft"] or release["isPrerelease"]:
+              raise SystemExit("GitHub Release was unexpectedly created as a draft or prerelease.")
+
+          expected_assets = {}
+          for entry in manifest["nexus_files"]:
+              path = assets_dir / entry["archive"]
+              expected_assets[entry["archive"].replace(" ", ".")] = {
+                  "label": entry["display_name"],
+                  "digest": f"sha256:{hashlib.sha256(path.read_bytes()).hexdigest()}",
+              }
+          actual_assets = {
+              entry["name"]: {"label": entry["label"], "digest": entry["digest"]}
+              for entry in release["assets"]
+          }
+          if actual_assets != expected_assets:
+              raise SystemExit(
+                  "GitHub Release assets, labels, or SHA-256 digests do not match the manifest."
+              )
+          print("Verified the GitHub Release and all nine uploaded archives.")
+          PY
 
   resolve-nexus:
     name: Verify existing Nexus file entries
-    needs: [validate-version, package]
+    needs: [validate-version, package, publish-github-release]
     if: needs.validate-version.outputs.publish_nexus == 'true'
     runs-on: ubuntu-24.04
     permissions:
@@ -289,7 +339,11 @@ jobs:
           file_id: ${{ matrix.file_id }}
           filename: release-assets/${{ matrix.archive }}
           version: ${{ needs.validate-version.outputs.version }}
-          # Preserve each verified Nexus file's existing title and category.
+          # Preserve every mutable setting exposed by the Nexus file APIs.
           display_name: ${{ matrix.display_name }}
+          description: ${{ matrix.description }}
           category: ${{ matrix.category }}
+          primary_mod_manager_download: ${{ matrix.primary_mod_manager_download }}
+          allow_mod_manager_download: ${{ matrix.allow_mod_manager_download }}
+          show_requirements_pop_up: ${{ matrix.show_requirements_pop_up }}
           update_mod_version: ${{ matrix.update_mod_version }}

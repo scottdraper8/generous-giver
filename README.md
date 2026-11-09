@@ -2,7 +2,7 @@
 
 # Generous Giver
 
-![No Man's Sky 7.13](assets/badges/nms-version.svg)
+![No Man's Sky 7.14](assets/badges/nms-version.svg)
 ![FOMOD 5.0](assets/badges/fomod-version.svg)
 ![Nexus Mods download count](assets/badges/nexus-downloads.svg)
 

@@ -17,6 +17,9 @@ ROOT = Path(__file__).resolve().parents[1]
 FOMOD = ROOT / "fomod"
 TABLES = Path("METADATA/REALITY/TABLES")
 VERSION_PATTERN = re.compile(r"\d+\.\d+(?:\.\d+)?")
+XSI_SCHEMA_LOCATION = (
+    "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation"
+)
 
 
 def read_version() -> str:
@@ -25,6 +28,72 @@ def read_version() -> str:
     if version is None or not VERSION_PATTERN.fullmatch(version):
         raise SystemExit(f"Unsupported or missing FOMOD release version: {version!r}")
     return version
+
+
+def validate_badge(path: Path, label: str, version: str) -> None:
+    root = ET.parse(path).getroot()
+    expected_accessible_label = f"{label}: {version}"
+    if root.get("aria-label") != expected_accessible_label:
+        raise SystemExit(
+            f"{path.relative_to(ROOT)} aria-label must be "
+            f"{expected_accessible_label!r}."
+        )
+
+    titles = [
+        element.text
+        for element in root.iter()
+        if element.tag.rsplit("}", 1)[-1] == "title"
+    ]
+    if titles != [expected_accessible_label]:
+        raise SystemExit(
+            f"{path.relative_to(ROOT)} title must be {expected_accessible_label!r}."
+        )
+
+    displayed_versions = {
+        text
+        for element in root.iter()
+        if element.tag.rsplit("}", 1)[-1] == "text"
+        and (text := (element.text or "").strip())
+        and VERSION_PATTERN.fullmatch(text)
+    }
+    if displayed_versions != {version}:
+        raise SystemExit(
+            f"{path.relative_to(ROOT)} displays {sorted(displayed_versions)!r}; "
+            f"expected only {version!r}."
+        )
+
+
+def validate_release_metadata(version: str) -> None:
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    nms_badges = re.findall(
+        r"!\[No Man's Sky ([^\]]+)\]\(assets/badges/nms-version\.svg\)",
+        readme,
+    )
+    if nms_badges != [version]:
+        raise SystemExit(
+            f"README No Man's Sky badge versions are {nms_badges!r}; "
+            f"expected exactly {version!r}."
+        )
+    validate_badge(ROOT / "assets/badges/nms-version.svg", "No Man's Sky", version)
+
+    config = ET.parse(FOMOD / "ModuleConfig.xml").getroot()
+    schema_location = config.get(XSI_SCHEMA_LOCATION, "")
+    schema_match = re.search(r"ModConfig(\d+\.\d+)\.xsd$", schema_location)
+    if schema_match is None:
+        raise SystemExit(
+            "fomod/ModuleConfig.xml does not declare a supported ModConfig schema."
+        )
+    fomod_version = schema_match.group(1)
+    fomod_badges = re.findall(
+        r"!\[FOMOD ([^\]]+)\]\(assets/badges/fomod-version\.svg\)",
+        readme,
+    )
+    if fomod_badges != [fomod_version]:
+        raise SystemExit(
+            f"README FOMOD badge versions are {fomod_badges!r}; "
+            f"expected exactly {fomod_version!r}."
+        )
+    validate_badge(ROOT / "assets/badges/fomod-version.svg", "FOMOD", fomod_version)
 
 
 def validate_fomod() -> list[Path]:
@@ -128,15 +197,25 @@ def write_release_notes(output: Path, version: str, release_assets: list[str]) -
 
 def main() -> None:
     if len(sys.argv) != 2:
-        raise SystemExit("Usage: build_release_assets.py OUTPUT_DIRECTORY")
+        raise SystemExit(
+            "Usage: build_release_assets.py OUTPUT_DIRECTORY | --validate-only"
+        )
+
+    version = read_version()
+    fomod_payloads = validate_fomod()
+    validate_release_metadata(version)
+    if sys.argv[1] == "--validate-only":
+        print(
+            f"Validated Generous Giver {version}, FOMOD metadata, badges, and "
+            f"{len(fomod_payloads)} EXML payloads."
+        )
+        return
 
     output = Path(sys.argv[1]).resolve()
     output.mkdir(parents=True, exist_ok=True)
     if any(output.iterdir()):
         raise SystemExit(f"Output directory must be empty: {output}")
 
-    version = read_version()
-    fomod_payloads = validate_fomod()
     installer_name = f"GenerousGiver-{version}.zip"
     write_zip(
         output / installer_name,
