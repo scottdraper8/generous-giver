@@ -46,16 +46,11 @@ Install the archive with [Vortex](https://www.nexusmods.com/vortex) or
 [Amethyst Mod Manager](https://github.com/ChrisDKN/Amethyst-Mod-Manager). Choose
 a gift amount and dialogue behavior for Gek, Korvax, and Vy'keen on the first
 FOMOD page. The second page controls whether the multiplier applies to Autophage
-and whether their gift option stays available and cycles to a new gift. The
-recommended defaults enable the Autophage multiplier and keep and cycle their
-gift option.
+and whether their gift option stays available and cycles to a new gift.
 
 Each GitHub release includes the all-in-one FOMOD installer and eight optional
 archives for installing without a mod manager. Choose exactly one optional
-archive for the gift amount and dialogue behavior you want. All eight manual
-archives enable the Autophage multiplier. Dialogue Open archives also keep and
-cycle the Autophage gift option; Dialogue Closed archives close it and remove
-the ability to regift that NPC.
+archive for the gift amount and dialogue behavior you want.
 
 To install an optional archive manually, extract it into the game's
 `GAMEDATA/MODS` directory. The archive contains a folder named
