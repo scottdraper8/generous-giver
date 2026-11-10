@@ -32,6 +32,7 @@ jobs:
     outputs:
       publish: ${{ steps.version.outputs.publish }}
       publish_nexus: ${{ steps.version.outputs.publish_nexus }}
+      replace_current: ${{ steps.version.outputs.replace_current }}
       version: ${{ steps.version.outputs.version }}
     steps:
       - name: Harden runner
@@ -88,13 +89,15 @@ jobs:
                       f"Requested release {requested!r} does not match FOMOD version {current!r}."
                   )
               publish_nexus = os.environ["PUBLISH_TO_NEXUS"].lower() == "true"
+              replace_current = publish_nexus
           elif event_name == "push":
               publish_nexus = True
               before = os.environ["BEFORE_SHA"]
               if not before or set(before) == {"0"}:
                   print("::notice::No prior commit is available for comparison; release skipped.")
                   output.write_text(
-                      f"publish=false\npublish_nexus=false\nversion={current}\n",
+                      "publish=false\npublish_nexus=false\n"
+                      f"replace_current=false\nversion={current}\n",
                       encoding="utf-8",
                   )
                   raise SystemExit(0)
@@ -111,23 +114,24 @@ jobs:
                   parts = [int(part) for part in value.split(".")]
                   return tuple((parts + [0, 0, 0])[:3])
 
-              if current == previous or version_tuple(current) == version_tuple(previous):
-                  print(f"::notice::FOMOD version remains {current}; release skipped.")
-                  output.write_text(
-                      f"publish=false\npublish_nexus=false\nversion={current}\n",
-                      encoding="utf-8",
-                  )
-                  raise SystemExit(0)
-
-              if version_tuple(current) <= version_tuple(previous):
+              current_version = version_tuple(current)
+              previous_version = version_tuple(previous)
+              if current_version < previous_version:
                   raise SystemExit(
                       f"Release version must increase: {previous} -> {current}"
+                  )
+              replace_current = current_version == previous_version
+              if replace_current:
+                  print(
+                      f"::notice::FOMOD content changed without a version bump; "
+                      f"changed v{current} archives will replace their current versions."
                   )
           else:
               raise SystemExit(f"Unsupported workflow event: {event_name}")
 
           output.write_text(
-              f"publish=true\npublish_nexus={str(publish_nexus).lower()}\nversion={current}\n",
+              f"publish=true\npublish_nexus={str(publish_nexus).lower()}\n"
+              f"replace_current={str(replace_current).lower()}\nversion={current}\n",
               encoding="utf-8",
           )
           print(f"Validated FOMOD package for release v{current}.")
@@ -306,6 +310,7 @@ jobs:
         id: resolve
         env:
           NEXUS_API_KEY: ${{ secrets.NEXUS_API_KEY }}
+          REPLACE_CURRENT_NEXUS_VERSION: ${{ needs.validate-version.outputs.replace_current }}
         run: python3 scripts/resolve_nexus_files.py release-assets/manifest.json
 
   publish-nexus:
@@ -343,6 +348,7 @@ jobs:
           display_name: ${{ matrix.display_name }}
           description: ${{ matrix.description }}
           category: ${{ matrix.category }}
+          archive_existing_version: ${{ matrix.archive_existing_version }}
           primary_mod_manager_download: ${{ matrix.primary_mod_manager_download }}
           allow_mod_manager_download: ${{ matrix.allow_mod_manager_download }}
           show_requirements_pop_up: ${{ matrix.show_requirements_pop_up }}

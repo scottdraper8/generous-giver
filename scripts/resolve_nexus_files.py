@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import sys
@@ -40,6 +41,31 @@ def get_json(base_url: str, path: str, api_key: str) -> dict[str, Any]:
         ) from None
     except urllib.error.URLError as error:
         raise SystemExit(f"Nexus API request failed: {error.reason}") from None
+
+
+def get_json_list(base_url: str, path: str, api_key: str) -> list[dict[str, Any]]:
+    request = urllib.request.Request(
+        f"{base_url}{path}",
+        headers={
+            "Accept": "application/json",
+            "User-Agent": "Generous-Giver release workflow",
+            "apikey": api_key,
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            result = json.load(response)
+    except urllib.error.HTTPError as error:
+        raise SystemExit(
+            f"Nexus API request failed with HTTP {error.code}: {path}"
+        ) from None
+    except urllib.error.URLError as error:
+        raise SystemExit(f"Nexus API request failed: {error.reason}") from None
+    if not isinstance(result, list) or not all(
+        isinstance(item, dict) for item in result
+    ):
+        raise SystemExit(f"Nexus API returned an invalid list response: {path}")
+    return cast(list[dict[str, Any]], result)
 
 
 def post_json(url: str, payload: dict[str, Any], api_key: str) -> dict[str, Any]:
@@ -134,6 +160,31 @@ def version_position(version: dict[str, Any], display_name: str) -> Decimal:
             "No files were uploaded."
         )
     return position
+
+
+def archive_matches_version(
+    archive: Path, version: dict[str, Any], api_key: str
+) -> bool:
+    if not archive.is_file():
+        raise SystemExit(f"Release archive does not exist: {archive}")
+    digest = hashlib.md5(archive.read_bytes()).hexdigest()
+    matches = get_json_list(
+        API_V1_BASE,
+        f"/games/{GAME_DOMAIN}/mods/md5_search/{quote(digest, safe='')}.json",
+        api_key,
+    )
+    game_scoped_file_id = str(version.get("game_scoped_id", ""))
+    for match in matches:
+        mod = match.get("mod")
+        file_details = match.get("file_details")
+        if not isinstance(mod, dict) or not isinstance(file_details, dict):
+            continue
+        if (
+            str(mod.get("mod_id", "")) == GAME_SCOPED_MOD_ID
+            and str(file_details.get("file_id", "")) == game_scoped_file_id
+        ):
+            return True
+    return False
 
 
 def read_version_metadata(
@@ -238,8 +289,13 @@ def main() -> None:
     if not api_key:
         raise SystemExit("NEXUS_API_KEY is required for a Nexus upload.")
 
-    manifest = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+    manifest_path = Path(sys.argv[1])
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     version = manifest["version"]
+    replace_value = os.environ.get("REPLACE_CURRENT_NEXUS_VERSION", "false").lower()
+    if replace_value not in {"true", "false"}:
+        raise SystemExit("REPLACE_CURRENT_NEXUS_VERSION must be true or false.")
+    replace_current = replace_value == "true"
     files_response = get_json(API_V3_BASE, f"/mods/{MOD_ID}/files", api_key)
     existing_files = files_response.get("data", {}).get("mod_files")
     if not isinstance(existing_files, list):
@@ -276,19 +332,18 @@ def main() -> None:
         already_uploaded = [
             item for item in versions if str(item.get("version")) == version
         ]
-        if len(already_uploaded) > 1:
-            raise SystemExit(
-                f"Nexus returned multiple {expected['display_name']!r} versions named "
-                f"{version!r}. No files were uploaded."
-            )
         latest = max(
             versions,
             key=lambda item: version_position(item, expected["display_name"]),
         )
         if already_uploaded:
-            uploaded = already_uploaded[0]
+            uploaded = max(
+                already_uploaded,
+                key=lambda item: version_position(item, expected["display_name"]),
+            )
             print(
-                f"Found Nexus version {version!r} for {expected['display_name']!r} "
+                f"Found {len(already_uploaded)} Nexus version(s) named {version!r} "
+                f"for {expected['display_name']!r}; newest match is "
                 f"at position {uploaded.get('position')!r} with category "
                 f"{uploaded.get('category')!r}; newest reported version is "
                 f"{latest.get('version')!r} at position {latest.get('position')!r} "
@@ -301,11 +356,20 @@ def main() -> None:
                     f"Nexus version {version!r} is not the newest version of "
                     f"{expected['display_name']!r}. No files were uploaded."
                 )
-            continue
+            if not replace_current:
+                continue
+            archive = manifest_path.parent / expected["archive"]
+            if archive_matches_version(archive, latest, api_key):
+                print(
+                    f"Nexus already has the exact {archive.name!r} bytes as the "
+                    f"newest version of {expected['display_name']!r}; upload skipped."
+                )
+                continue
 
         upload_matrix.append(
             {
                 "file_id": file_id,
+                "archive_existing_version": bool(already_uploaded),
                 **latest_metadata,
                 **expected,
             }

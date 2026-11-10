@@ -448,7 +448,6 @@ def append_autophage_step(install_steps: ET.Element) -> None:
             "autophage_dialogue",
             "keep",
             "Recommended",
-            image_path="fomod/images/autophage-dialogue-open.gif",
         )
     )
     dialogue_plugins.append(
@@ -458,7 +457,6 @@ def append_autophage_step(install_steps: ET.Element) -> None:
             "autophage_dialogue",
             "remove",
             "Optional",
-            image_path="fomod/images/autophage-dialogue-closed.gif",
         )
     )
 
@@ -504,20 +502,16 @@ def update_module_config() -> None:
                 "Leave Gek, Korvax, and Vy'keen dialogue open after giving a gift."
             )
             image = option.find("image")
-            if image is None:
-                image = ET.Element("image")
-                option.insert(1, image)
-            image.set("path", "fomod/images/normal-dialogue-open.gif")
+            if image is not None:
+                option.remove(image)
         elif dialogue_flag is not None and dialogue_flag.text == "closed":
             option.set("name", "Close dialogue (normal behavior)")
             description.text = (
                 "Close Gek, Korvax, and Vy'keen dialogue after giving a gift."
             )
             image = option.find("image")
-            if image is None:
-                image = ET.Element("image")
-                option.insert(1, image)
-            image.set("path", "fomod/images/normal-dialogue-closed.gif")
+            if image is not None:
+                option.remove(image)
     for step in list(install_steps):
         if step is not first_step:
             install_steps.remove(step)
