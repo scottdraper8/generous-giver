@@ -63,13 +63,9 @@ To install an optional archive manually, extract it into the game's
 Do not install an optional archive alongside the FOMOD version.
 
 <p align="center">
-  <kbd>
-    <img
-      alt="banner"
-      width="98%"
-      src="assets/fomod.png"
-    />
-  </kbd>
+  <kbd><img alt="FOMOD installer page 1" width="98%" src="assets/fomod_1.png" /></kbd>
+  <br />
+  <kbd><img alt="FOMOD installer page 2" width="98%" src="assets/fomod_2.png" /></kbd>
 </p>
 
 ---
