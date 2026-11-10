@@ -138,7 +138,11 @@ def version_position(version: dict[str, Any], display_name: str) -> Decimal:
 
 
 def read_version_metadata(
-    version: dict[str, Any], expected: dict[str, Any], api_key: str
+    version: dict[str, Any],
+    expected: dict[str, Any],
+    api_key: str,
+    *,
+    expected_category: str | None = None,
 ) -> dict[str, Any]:
     display_name = expected["display_name"]
     if version.get("name") != display_name:
@@ -146,11 +150,12 @@ def read_version_metadata(
             f"Nexus reports a version in file {display_name!r} as "
             f"{version.get('name')!r}. No files were uploaded."
         )
-    if version.get("category") != expected["category"]:
+    category = expected["category"] if expected_category is None else expected_category
+    if version.get("category") != category:
         raise SystemExit(
             f"Nexus reports version {version.get('version')!r} at position "
             f"{version.get('position')!r} in file {display_name!r} as category "
-            f"{version.get('category')!r}, expected {expected['category']!r}. "
+            f"{version.get('category')!r}, expected {category!r}. "
             "No files were uploaded."
         )
 
@@ -315,7 +320,12 @@ def main() -> None:
                 predecessors,
                 key=lambda item: version_position(item, expected["display_name"]),
             )
-            predecessor_metadata = read_version_metadata(predecessor, expected, api_key)
+            predecessor_metadata = read_version_metadata(
+                predecessor,
+                expected,
+                api_key,
+                expected_category="old_version",
+            )
             if latest_metadata != predecessor_metadata:
                 raise SystemExit(
                     f"Nexus version {version!r} changed file metadata for "
