@@ -56,6 +56,8 @@ def get_json_list(base_url: str, path: str, api_key: str) -> list[dict[str, Any]
         with urllib.request.urlopen(request, timeout=30) as response:
             result = json.load(response)
     except urllib.error.HTTPError as error:
+        if error.code == 404:
+            return []
         raise SystemExit(
             f"Nexus API request failed with HTTP {error.code}: {path}"
         ) from None
