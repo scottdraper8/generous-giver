@@ -80,4 +80,187 @@
       </Property>
     </Property>
   </Property>
+  <Property name="InteractionTable">
+    <Property name="InteractionTable" value="GcCostTableEntry" _id="GG_BUI_ATL_C20">
+      <Property name="Id" value="GG_BUI_ATL_C20" />
+      <Property name="DisplayCost" value="true" />
+      <Property name="DontCharge" value="false" />
+      <Property name="HideOptionAndDisplayCostOnly" value="false" />
+      <Property name="DisplayOnlyCostIfCantAfford" value="false" />
+      <Property name="HideCostStringIfCanAfford" value="false" />
+      <Property name="RemoveOptionIfCantAfford" value="false" />
+      <Property name="InvertCanAffordOutcome" value="false" />
+      <Property name="MustAffordInCreative" value="false" />
+      <Property name="CommunityContributionValue" value="0" />
+      <Property name="CommunityContributionCapLocID" value="UI_COMMUNITY_CAP_REACHED" />
+      <Property name="CannotAffordOSDMsg" value="" />
+      <Property name="MissionMessageWhenCharged" value="" />
+      <Property name="Cost" value="GcCostGroup">
+        <Property name="GcCostGroup">
+          <Property name="Text" value="" />
+          <Property name="TakeTextFromIndex" value="0" />
+          <Property name="HideOptionIfCantAffordIndex" value="1" />
+          <Property name="Test" value="GcMissionConditionTest">
+            <Property name="ConditionTest" value="AllTrue" />
+          </Property>
+          <Property name="Costs">
+            <Property name="Costs" value="GcCostSubstance">
+              <Property name="GcCostSubstance">
+                <Property name="Default" value="GcDefaultMissionSubstanceEnum">
+                  <Property name="DefaultSubstanceType" value="None" />
+                </Property>
+                <Property name="Id" value="ROBOT2" />
+                <Property name="UseScanEventToDetermineLocalSubstance" value="" />
+                <Property name="UseSpecificPlanetIndexForLocalSubstance" value="-1" />
+                <Property name="UseRandomPlanetIndex" value="false" />
+                <Property name="LocalSubstanceType" value="GcLocalSubstanceType">
+                  <Property name="LocalSubstanceType" value="AnyDeposit" />
+                </Property>
+                <Property name="Amount" value="380" />
+                <Property name="UseDefaultAmount" value="false" />
+                <Property name="TakeAmountFromSeasonData" value="false" />
+              </Property>
+            </Property>
+            <Property name="Costs" value="GcCostInteractionMissionState">
+              <Property name="GcCostInteractionMissionState">
+                <Property name="RequiredState" value="GcInteractionMissionState">
+                  <Property name="InteractionMissionState" value="Unused" />
+                </Property>
+                <Property name="CantAffordLocID" value="" />
+                <Property name="CanAffordLocID" value="" />
+                <Property name="AlsoAcceptMaintenanceDone" value="false" />
+                <Property name="TestThisInteraction" value="true" />
+                <Property name="ThisInteractionClassInMyBuilding" value="GcInteractionType">
+                  <Property name="InteractionType" value="None" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="InteractionTable" value="GcCostTableEntry" _id="GG_BUI_SHD_C20">
+      <Property name="Id" value="GG_BUI_SHD_C20" />
+      <Property name="DisplayCost" value="true" />
+      <Property name="DontCharge" value="false" />
+      <Property name="HideOptionAndDisplayCostOnly" value="false" />
+      <Property name="DisplayOnlyCostIfCantAfford" value="false" />
+      <Property name="HideCostStringIfCanAfford" value="false" />
+      <Property name="RemoveOptionIfCantAfford" value="false" />
+      <Property name="InvertCanAffordOutcome" value="false" />
+      <Property name="MustAffordInCreative" value="false" />
+      <Property name="CommunityContributionValue" value="0" />
+      <Property name="CommunityContributionCapLocID" value="UI_COMMUNITY_CAP_REACHED" />
+      <Property name="CannotAffordOSDMsg" value="" />
+      <Property name="MissionMessageWhenCharged" value="" />
+      <Property name="Cost" value="GcCostGroup">
+        <Property name="GcCostGroup">
+          <Property name="Text" value="" />
+          <Property name="TakeTextFromIndex" value="0" />
+          <Property name="HideOptionIfCantAffordIndex" value="1" />
+          <Property name="Test" value="GcMissionConditionTest">
+            <Property name="ConditionTest" value="AllTrue" />
+          </Property>
+          <Property name="Costs">
+            <Property name="Costs" value="GcCostProduct">
+              <Property name="GcCostProduct">
+                <Property name="Default" value="GcDefaultMissionProductEnum">
+                  <Property name="DefaultProductType" value="None" />
+                </Property>
+                <Property name="Id" value="DRONE_SHARD" />
+                <Property name="Amount" value="20" />
+                <Property name="UseDefaultAmount" value="false" />
+                <Property name="TakeIDFromSeasonData" value="false" />
+              </Property>
+            </Property>
+            <Property name="Costs" value="GcCostInteractionMissionState">
+              <Property name="GcCostInteractionMissionState">
+                <Property name="RequiredState" value="GcInteractionMissionState">
+                  <Property name="InteractionMissionState" value="Unused" />
+                </Property>
+                <Property name="CantAffordLocID" value="" />
+                <Property name="CanAffordLocID" value="" />
+                <Property name="AlsoAcceptMaintenanceDone" value="false" />
+                <Property name="TestThisInteraction" value="true" />
+                <Property name="ThisInteractionClassInMyBuilding" value="GcInteractionType">
+                  <Property name="InteractionType" value="None" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="InteractionTable" value="GcCostTableEntry" _id="GG_BUI_SCR_C20">
+      <Property name="Id" value="GG_BUI_SCR_C20" />
+      <Property name="DisplayCost" value="true" />
+      <Property name="DontCharge" value="false" />
+      <Property name="HideOptionAndDisplayCostOnly" value="false" />
+      <Property name="DisplayOnlyCostIfCantAfford" value="false" />
+      <Property name="HideCostStringIfCanAfford" value="false" />
+      <Property name="RemoveOptionIfCantAfford" value="false" />
+      <Property name="InvertCanAffordOutcome" value="false" />
+      <Property name="MustAffordInCreative" value="false" />
+      <Property name="CommunityContributionValue" value="0" />
+      <Property name="CommunityContributionCapLocID" value="UI_COMMUNITY_CAP_REACHED" />
+      <Property name="CannotAffordOSDMsg" value="" />
+      <Property name="MissionMessageWhenCharged" value="" />
+      <Property name="Cost" value="GcCostGroup">
+        <Property name="GcCostGroup">
+          <Property name="Text" value="" />
+          <Property name="TakeTextFromIndex" value="0" />
+          <Property name="HideOptionIfCantAffordIndex" value="1" />
+          <Property name="Test" value="GcMissionConditionTest">
+            <Property name="ConditionTest" value="AllTrue" />
+          </Property>
+          <Property name="Costs">
+            <Property name="Costs" value="GcCostItemFromList">
+              <Property name="GcCostItemFromList">
+                <Property name="Amount" value="20" />
+                <Property name="ItemList">
+                  <Property name="ItemList" value="SALVAGE_TECH6" _index="0" />
+                  <Property name="ItemList" value="TRA_ALLOY1" _index="1" />
+                  <Property name="ItemList" value="TRA_ALLOY2" _index="2" />
+                  <Property name="ItemList" value="TRA_ALLOY3" _index="3" />
+                  <Property name="ItemList" value="TRA_ALLOY4" _index="4" />
+                  <Property name="ItemList" value="TRA_ALLOY5" _index="5" />
+                  <Property name="ItemList" value="TRA_COMPONENT1" _index="6" />
+                  <Property name="ItemList" value="TRA_COMPONENT2" _index="7" />
+                  <Property name="ItemList" value="TRA_COMPONENT3" _index="8" />
+                  <Property name="ItemList" value="TRA_COMPONENT4" _index="9" />
+                  <Property name="ItemList" value="TRA_COMPONENT5" _index="10" />
+                  <Property name="ItemList" value="TRA_ENERGY1" _index="11" />
+                  <Property name="ItemList" value="TRA_ENERGY2" _index="12" />
+                  <Property name="ItemList" value="TRA_ENERGY3" _index="13" />
+                  <Property name="ItemList" value="TRA_ENERGY4" _index="14" />
+                  <Property name="ItemList" value="TRA_ENERGY5" _index="15" />
+                  <Property name="ItemList" value="TRA_TECH1" _index="16" />
+                  <Property name="ItemList" value="TRA_TECH2" _index="17" />
+                  <Property name="ItemList" value="TRA_TECH3" _index="18" />
+                  <Property name="ItemList" value="TRA_TECH4" _index="19" />
+                  <Property name="ItemList" value="TRA_TECH5" _index="20" />
+                </Property>
+                <Property name="Index" value="16" />
+                <Property name="CostStringCantAfford" value="" />
+              </Property>
+            </Property>
+            <Property name="Costs" value="GcCostInteractionMissionState">
+              <Property name="GcCostInteractionMissionState">
+                <Property name="RequiredState" value="GcInteractionMissionState">
+                  <Property name="InteractionMissionState" value="Unused" />
+                </Property>
+                <Property name="CantAffordLocID" value="" />
+                <Property name="CanAffordLocID" value="" />
+                <Property name="AlsoAcceptMaintenanceDone" value="false" />
+                <Property name="TestThisInteraction" value="true" />
+                <Property name="ThisInteractionClassInMyBuilding" value="GcInteractionType">
+                  <Property name="InteractionType" value="None" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
 </Data>

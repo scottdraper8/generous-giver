@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
   <moduleName>Generous Giver</moduleName>
   <installSteps order="Explicit">
-    <installStep name="Gift settings">
+    <installStep name="Gek, Korvax, and Vy'keen Settings">
       <optionalFileGroups order="Explicit">
-        <group name="Choose an exact amount" type="SelectExactlyOne">
+        <group name="Choose an Exact Amount" type="SelectExactlyOne">
           <plugins order="Explicit">
             <plugin name="5">
-              <description>Give 5 gifts and recieve 5 standing. Works for all alien races.</description>
+              <description>Give 5 gifts and receive 5 standing. This amount also controls the Autophage multiplier when enabled on the next page.</description>
               <image path="fomod/images/korvax-5.jpg" />
               <files>
                 <folder source="fomod/files/5" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -20,7 +20,7 @@
               </typeDescriptor>
             </plugin>
             <plugin name="10">
-              <description>Give 10 gifts and recieve 10 standing. Works for all alien races.</description>
+              <description>Give 10 gifts and receive 10 standing. This amount also controls the Autophage multiplier when enabled on the next page.</description>
               <image path="fomod/images/korvax-10.jpg" />
               <files>
                 <folder source="fomod/files/10" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -33,7 +33,7 @@
               </typeDescriptor>
             </plugin>
             <plugin name="15">
-              <description>Give 15 gifts and recieve 15 standing. Works for all alien races.</description>
+              <description>Give 15 gifts and receive 15 standing. This amount also controls the Autophage multiplier when enabled on the next page.</description>
               <image path="fomod/images/vykeen-15.jpg" />
               <files>
                 <folder source="fomod/files/15" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -46,7 +46,7 @@
               </typeDescriptor>
             </plugin>
             <plugin name="20">
-              <description>Give 20 gifts and recieve 20 standing. Works for all alien races.</description>
+              <description>Give 20 gifts and receive 20 standing. This amount also controls the Autophage multiplier when enabled on the next page.</description>
               <image path="fomod/images/gek-20.jpg" />
               <files>
                 <folder source="fomod/files/20" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -60,10 +60,11 @@
             </plugin>
           </plugins>
         </group>
-        <group name="Dialogue behavior" type="SelectExactlyOne">
+        <group name="Dialogue Behavior" type="SelectExactlyOne">
           <plugins order="Explicit">
-            <plugin name="Keep dialogue open">
-              <description>Leave the alien dialogue open after giving a gift.</description>
+            <plugin name="Keep Dialogue Open">
+              <description>Leave Gek, Korvax, and Vy'keen dialogue open after giving a gift.</description>
+              <image path="fomod/images/normal-dialogue-open.gif" />
               <conditionFlags>
                 <flag name="dialogue_mode">open</flag>
               </conditionFlags>
@@ -71,10 +72,63 @@
                 <type name="Recommended" />
               </typeDescriptor>
             </plugin>
-            <plugin name="Close dialogue">
-              <description>Close the alien dialogue after giving a gift.</description>
+            <plugin name="Close dialogue (normal behavior)">
+              <description>Close Gek, Korvax, and Vy'keen dialogue after giving a gift.</description>
+              <image path="fomod/images/normal-dialogue-closed.gif" />
               <conditionFlags>
                 <flag name="dialogue_mode">closed</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+    <installStep name="Autophage Settings">
+      <optionalFileGroups order="Explicit">
+        <group name="Autophage Gift Multiplier" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Enable Multiplier">
+              <description>Apply the selected gift amount to Autophage gift costs and standing rewards.</description>
+              <image path="fomod/images/autophage-10.jpg" />
+              <conditionFlags>
+                <flag name="autophage_multiplier">enabled</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Disable Multiplier">
+              <description>Leave Autophage gift costs and standing rewards at their vanilla amounts.</description>
+              <image path="fomod/images/autophage-multiplier-disabled.jpg" />
+              <conditionFlags>
+                <flag name="autophage_multiplier">disabled</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Optional" />
+              </typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+        <group name="Autophage Dialogue Behavior" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Keep dialogue open and cycle gift option">
+              <description>Keep the dialogue open and reseed the Autophage to request another gift after each gift.</description>
+              <image path="fomod/images/autophage-dialogue-open.gif" />
+              <conditionFlags>
+                <flag name="autophage_dialogue">keep</flag>
+              </conditionFlags>
+              <typeDescriptor>
+                <type name="Recommended" />
+              </typeDescriptor>
+            </plugin>
+            <plugin name="Close dialogue and remove ability to regift that NPC (normal behavior)">
+              <description>Use vanilla behavior: close the dialogue and remove the gift option for that Autophage.</description>
+              <image path="fomod/images/autophage-dialogue-closed.gif" />
+              <conditionFlags>
+                <flag name="autophage_dialogue">remove</flag>
               </conditionFlags>
               <typeDescriptor>
                 <type name="Optional" />
@@ -91,6 +145,8 @@
         <dependencies operator="And">
           <flagDependency flag="gift_amount" value="5" />
           <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
         </dependencies>
         <files>
           <folder source="fomod/dialogue/5/open" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -99,7 +155,42 @@
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="gift_amount" value="5" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/enabled/remove/5/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="5" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/keep/5/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="5" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/remove/5/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="5" />
           <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
         </dependencies>
         <files>
           <folder source="fomod/dialogue/5/closed" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -107,8 +198,43 @@
       </pattern>
       <pattern>
         <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="5" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/enabled/remove/5/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="5" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/keep/5/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="5" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/remove/5/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
           <flagDependency flag="gift_amount" value="10" />
           <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
         </dependencies>
         <files>
           <folder source="fomod/dialogue/10/open" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -117,7 +243,42 @@
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="gift_amount" value="10" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/enabled/remove/10/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="10" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/keep/10/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="10" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/remove/10/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="10" />
           <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
         </dependencies>
         <files>
           <folder source="fomod/dialogue/10/closed" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -125,8 +286,43 @@
       </pattern>
       <pattern>
         <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="10" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/enabled/remove/10/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="10" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/keep/10/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="10" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/remove/10/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
           <flagDependency flag="gift_amount" value="15" />
           <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
         </dependencies>
         <files>
           <folder source="fomod/dialogue/15/open" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -135,7 +331,42 @@
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="gift_amount" value="15" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/enabled/remove/15/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="15" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/keep/15/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="15" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/remove/15/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="15" />
           <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
         </dependencies>
         <files>
           <folder source="fomod/dialogue/15/closed" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -143,8 +374,43 @@
       </pattern>
       <pattern>
         <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="15" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/enabled/remove/15/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="15" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/keep/15/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="15" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/remove/15/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
           <flagDependency flag="gift_amount" value="20" />
           <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
         </dependencies>
         <files>
           <folder source="fomod/dialogue/20/open" destination="GAMEDATA/MODS/GenerousGiver" />
@@ -153,10 +419,78 @@
       <pattern>
         <dependencies operator="And">
           <flagDependency flag="gift_amount" value="20" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/enabled/remove/20/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="20" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/keep/20/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="20" />
+          <flagDependency flag="dialogue_mode" value="open" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/remove/20/open" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="20" />
           <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
         </dependencies>
         <files>
           <folder source="fomod/dialogue/20/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="20" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="enabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/enabled/remove/20/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="20" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="keep" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/keep/20/closed" destination="GAMEDATA/MODS/GenerousGiver" />
+        </files>
+      </pattern>
+      <pattern>
+        <dependencies operator="And">
+          <flagDependency flag="gift_amount" value="20" />
+          <flagDependency flag="dialogue_mode" value="closed" />
+          <flagDependency flag="autophage_multiplier" value="disabled" />
+          <flagDependency flag="autophage_dialogue" value="remove" />
+        </dependencies>
+        <files>
+          <folder source="fomod/autophage-dialogue/disabled/remove/20/closed" destination="GAMEDATA/MODS/GenerousGiver" />
         </files>
       </pattern>
     </patterns>

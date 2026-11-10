@@ -1805,5 +1805,785 @@
         </Property>
       </Property>
     </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="0">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="1">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="2">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="3">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="4">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="5">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="6">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="7">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="8">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="9">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="10">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="11">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="12">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="13">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="14">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="15">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="16">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="17">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="18">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="19">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="20">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="21">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="22">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="23">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="24">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="25">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="26">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="27">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="28">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="29">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="30">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="31">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="32">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="33">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="34">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="35">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="36">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="37">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="38">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="39">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="40">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="41">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="42">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="43">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="44">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="45">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="46">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="47">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="48">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="49">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="50">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="51">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="52">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="53">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="54">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="55">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="56">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="57">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SHD_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="58">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_ATL_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
+    <Property name="Table" value="GcAlienPuzzleEntry" _id="BUI_NPC" _index="59">
+      <Property name="Options">
+        <Property name="Options" value="GcAlienPuzzleOption" _index="1">
+          <Property name="Cost" value="GG_BUI_SCR_C15" />
+          <Property name="Rewards">
+            <Property name="Rewards" value="GG_BUI_R_15" _index="0" />
+            <Property name="Rewards" value="GG_BUI_KEEP" _index="1" />
+          </Property>
+          <Property name="ReseedInteractionOnUse" value="true" />
+          <Property name="KeepOpen" value="true" />
+        </Property>
+      </Property>
+    </Property>
   </Property>
 </Data>
