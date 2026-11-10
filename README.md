@@ -53,8 +53,9 @@ gift option.
 Each GitHub release includes the all-in-one FOMOD installer and eight optional
 archives for installing without a mod manager. Choose exactly one optional
 archive for the gift amount and dialogue behavior you want. All eight manual
-archives enable the Autophage multiplier and keep their dialogue open while
-cycling to a new requested gift.
+archives enable the Autophage multiplier. Dialogue Open archives also keep and
+cycle the Autophage gift option; Dialogue Closed archives close it and remove
+the ability to regift that NPC.
 
 To install an optional archive manually, extract it into the game's
 `GAMEDATA/MODS` directory. The archive contains a folder named

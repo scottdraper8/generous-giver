@@ -457,15 +457,17 @@ def write_zip(path: Path, files: list[tuple[Path, Path]]) -> None:
 def manual_variant_files(
     quantity: int, dialogue: str, folder_name: str
 ) -> list[tuple[Path, Path]]:
+    autophage_dialogue = "keep" if dialogue == "open" else "remove"
+    dialogue_source = dialogue_payload_path(
+        quantity,
+        dialogue,
+        "enabled",
+        autophage_dialogue,
+    )
     source_files = [
         FOMOD / "files" / str(quantity) / TABLES / "COSTTABLE.EXML",
         FOMOD / "files" / str(quantity) / TABLES / "REWARDTABLE.EXML",
-        FOMOD
-        / "dialogue"
-        / str(quantity)
-        / dialogue
-        / TABLES
-        / "NMS_DIALOG_GCALIENPUZZLETABLE.EXML",
+        dialogue_source,
     ]
     if any(not path.is_file() for path in source_files):
         missing = next(path for path in source_files if not path.is_file())
@@ -497,17 +499,23 @@ def write_release_notes(output: Path, version: str, release_assets: list[str]) -
         "",
         "Only use one optional file below if you do not want to use the FOMOD installer. "
         "Extract it into the game's `GAMEDATA/MODS` directory. Every manual archive enables the "
-        "Autophage multiplier and keeps and cycles their gift option.",
+        "Autophage multiplier. Dialogue Open archives keep and cycle the Autophage gift option; "
+        "Dialogue Closed archives close it and remove regifting for that NPC.",
         "",
     ]
     for quantity in (5, 10, 15, 20):
         for dialogue in ("Open", "Closed"):
             asset = f"Generous Giver - {quantity} Gifts - Dialogue {dialogue}.zip"
             behavior = "keeps" if dialogue == "Open" else "closes"
+            autophage_behavior = (
+                "their gift option stays open and cycles"
+                if dialogue == "Open"
+                else "their dialogue closes and regifting that NPC is removed"
+            )
             lines.append(
                 f"- {link(asset, asset.removesuffix('.zip'))} — Gives {quantity} gifts and "
                 f"{behavior} Gek, Korvax, and Vy'keen dialogue after giving. The Autophage "
-                "multiplier is enabled and their gift option stays open and cycles."
+                f"multiplier is enabled; {autophage_behavior}."
             )
     lines.append("")
     (output / "release-notes.md").write_text("\n".join(lines), encoding="utf-8")
