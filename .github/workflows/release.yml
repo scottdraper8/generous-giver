@@ -347,3 +347,35 @@ jobs:
           allow_mod_manager_download: ${{ matrix.allow_mod_manager_download }}
           show_requirements_pop_up: ${{ matrix.show_requirements_pop_up }}
           update_mod_version: ${{ matrix.update_mod_version }}
+
+  verify-nexus:
+    name: Verify uploaded Nexus versions
+    needs: [package, resolve-nexus, publish-nexus]
+    if: needs.resolve-nexus.outputs.has_uploads == 'true'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@46b06cea07f9e64621fdf066ba77ac6915163d43 # v2.22.3
+        with:
+          disable-sudo: true
+          egress-policy: audit
+
+      - name: Check out the release scripts
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+
+      - name: Download the release manifest
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: generous-giver-release-assets
+          path: release-assets
+
+      - name: Compare uploaded files with their pre-upload metadata
+        env:
+          NEXUS_API_KEY: ${{ secrets.NEXUS_API_KEY }}
+          EXPECTED_NEXUS_UPLOADS_JSON: ${{ needs.resolve-nexus.outputs.matrix }}
+        run: python3 scripts/verify_nexus_uploads.py release-assets/manifest.json
