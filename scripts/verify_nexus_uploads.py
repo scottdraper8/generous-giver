@@ -97,18 +97,32 @@ def main() -> None:
             f"Nexus versions for {display_name!r}",
         )
         uploaded = [item for item in versions if str(item.get("version")) == version]
-        if len(uploaded) != 1:
+        if not uploaded:
             raise SystemExit(
-                f"Expected exactly one Nexus version {version!r} for {display_name!r}; "
-                f"found {len(uploaded)}."
+                f"Expected a Nexus version {version!r} for {display_name!r}."
             )
+        newest_uploaded = max(
+            uploaded, key=lambda item: version_position(item, str(display_name))
+        )
         latest = max(
             versions, key=lambda item: version_position(item, str(display_name))
         )
-        if uploaded[0].get("id") != latest.get("id"):
+        if newest_uploaded.get("id") != latest.get("id"):
             raise SystemExit(
                 f"Nexus version {version!r} is not newest for {display_name!r}."
             )
+        if expected.get("archive_existing_version"):
+            unarchived_previous = [
+                item
+                for item in uploaded
+                if item.get("id") != latest.get("id")
+                and item.get("category") != "archived"
+            ]
+            if unarchived_previous:
+                raise SystemExit(
+                    f"Nexus did not archive every replaced {version!r} version of "
+                    f"{display_name!r}."
+                )
 
         actual_metadata = read_version_metadata(latest, expected, api_key)
         changed_fields = [
