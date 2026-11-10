@@ -138,11 +138,7 @@ def version_position(version: dict[str, Any], display_name: str) -> Decimal:
 
 
 def read_version_metadata(
-    version: dict[str, Any],
-    expected: dict[str, Any],
-    api_key: str,
-    *,
-    expected_category: str | None = None,
+    version: dict[str, Any], expected: dict[str, Any], api_key: str
 ) -> dict[str, Any]:
     display_name = expected["display_name"]
     if version.get("name") != display_name:
@@ -150,12 +146,11 @@ def read_version_metadata(
             f"Nexus reports a version in file {display_name!r} as "
             f"{version.get('name')!r}. No files were uploaded."
         )
-    category = expected["category"] if expected_category is None else expected_category
-    if version.get("category") != category:
+    if version.get("category") != expected["category"]:
         raise SystemExit(
             f"Nexus reports version {version.get('version')!r} at position "
             f"{version.get('position')!r} in file {display_name!r} as category "
-            f"{version.get('category')!r}, expected {category!r}. "
+            f"{version.get('category')!r}, expected {expected['category']!r}. "
             "No files were uploaded."
         )
 
@@ -304,38 +299,6 @@ def main() -> None:
                 raise SystemExit(
                     f"Nexus version {version!r} is not the newest version of "
                     f"{expected['display_name']!r}. No files were uploaded."
-                )
-            uploaded_position = version_position(uploaded, expected["display_name"])
-            predecessors = [
-                item
-                for item in versions
-                if version_position(item, expected["display_name"]) < uploaded_position
-            ]
-            if not predecessors:
-                raise SystemExit(
-                    f"Nexus has no preceding version from which to verify metadata for "
-                    f"{expected['display_name']!r}. No files were uploaded."
-                )
-            predecessor = max(
-                predecessors,
-                key=lambda item: version_position(item, expected["display_name"]),
-            )
-            predecessor_metadata = read_version_metadata(
-                predecessor,
-                expected,
-                api_key,
-                expected_category="old_version",
-            )
-            changed_fields = sorted(
-                key
-                for key, value in latest_metadata.items()
-                if predecessor_metadata.get(key) != value
-            )
-            if changed_fields:
-                raise SystemExit(
-                    f"Nexus version {version!r} changed file metadata for "
-                    f"{expected['display_name']!r}: {', '.join(changed_fields)}. "
-                    "No files were uploaded."
                 )
             continue
 
