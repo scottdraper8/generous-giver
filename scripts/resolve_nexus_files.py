@@ -70,7 +70,7 @@ def get_file_settings(file_uid: str, api_key: str) -> dict[str, Any]:
         GRAPHQL_URL,
         {
             "query": """
-                query CurrentFileSettings($uids: [ID!]) {
+                query CurrentFileSettings($uids: [ID!]!) {
                   modFilesByUid(uids: $uids) {
                     nodes {
                       fileId
