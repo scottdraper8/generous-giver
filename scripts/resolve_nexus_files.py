@@ -352,6 +352,12 @@ def main() -> None:
                 f"with category {latest.get('category')!r}."
             )
         latest_metadata = read_version_metadata(latest, expected, api_key)
+        desired_metadata = {
+            **latest_metadata,
+            # Every Generous Giver archive supports direct installation by a mod
+            # manager. Do not inherit an accidental Nexus UI toggle here.
+            "allow_mod_manager_download": True,
+        }
         if already_uploaded:
             if uploaded.get("id") != latest.get("id"):
                 raise SystemExit(
@@ -361,18 +367,24 @@ def main() -> None:
             if not replace_current:
                 continue
             archive = manifest_path.parent / expected["archive"]
-            if archive_matches_version(archive, latest, api_key):
+            archive_is_current = archive_matches_version(archive, latest, api_key)
+            if archive_is_current and latest_metadata["allow_mod_manager_download"]:
                 print(
                     f"Nexus already has the exact {archive.name!r} bytes as the "
                     f"newest version of {expected['display_name']!r}; upload skipped."
                 )
                 continue
+            if archive_is_current:
+                print(
+                    f"Nexus has the current {archive.name!r} bytes but mod-manager "
+                    f"downloads are disabled; replacing the version to enable them."
+                )
 
         upload_matrix.append(
             {
                 "file_id": file_id,
                 "archive_existing_version": bool(already_uploaded),
-                **latest_metadata,
+                **desired_metadata,
                 **expected,
             }
         )
