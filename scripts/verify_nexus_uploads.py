@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, cast
 from urllib.parse import quote
@@ -20,11 +21,28 @@ from resolve_nexus_files import (
 
 
 METADATA_KEYS = (
-    "description",
     "primary_mod_manager_download",
     "allow_mod_manager_download",
     "show_requirements_pop_up",
 )
+
+
+class DescriptionTextParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+
+    def handle_data(self, data: str) -> None:
+        self.parts.append(data)
+
+
+def normalized_description(value: Any) -> str:
+    if not isinstance(value, str):
+        return ""
+    parser = DescriptionTextParser()
+    parser.feed(value)
+    parser.close()
+    return " ".join(" ".join(parser.parts).split())
 
 
 def require_object_list(value: Any, label: str) -> list[dict[str, Any]]:
@@ -130,6 +148,10 @@ def main() -> None:
             for key in METADATA_KEYS
             if actual_metadata.get(key) != expected.get(key)
         ]
+        if normalized_description(actual_metadata.get("description")) != (
+            normalized_description(expected.get("description"))
+        ):
+            changed_fields.append("description")
         if changed_fields:
             raise SystemExit(
                 f"Nexus changed uploaded metadata for {display_name!r}: "
