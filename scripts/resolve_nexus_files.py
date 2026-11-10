@@ -8,6 +8,7 @@ import os
 import sys
 import urllib.error
 import urllib.request
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any, cast
 from urllib.parse import quote
@@ -109,14 +110,20 @@ def read_boolean_setting(settings: dict[str, Any], key: str, display_name: str) 
     )
 
 
-def version_position(version: dict[str, Any], display_name: str) -> int:
+def version_position(version: dict[str, Any], display_name: str) -> Decimal:
     try:
-        return int(version["position"])
-    except (KeyError, TypeError, ValueError):
+        position = Decimal(str(version["position"]))
+    except (InvalidOperation, KeyError, TypeError, ValueError):
         raise SystemExit(
             f"Nexus returned an invalid version position for {display_name!r}. "
             "No files were uploaded."
         ) from None
+    if not position.is_finite():
+        raise SystemExit(
+            f"Nexus returned an invalid version position for {display_name!r}. "
+            "No files were uploaded."
+        )
+    return position
 
 
 def read_version_metadata(
