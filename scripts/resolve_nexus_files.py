@@ -148,7 +148,8 @@ def read_version_metadata(
         )
     if version.get("category") != expected["category"]:
         raise SystemExit(
-            f"Nexus reports a version in file {display_name!r} as category "
+            f"Nexus reports version {version.get('version')!r} at position "
+            f"{version.get('position')!r} in file {display_name!r} as category "
             f"{version.get('category')!r}, expected {expected['category']!r}. "
             "No files were uploaded."
         )
@@ -283,9 +284,17 @@ def main() -> None:
             versions,
             key=lambda item: version_position(item, expected["display_name"]),
         )
-        latest_metadata = read_version_metadata(latest, expected, api_key)
         if already_uploaded:
             uploaded = already_uploaded[0]
+            print(
+                f"Found Nexus version {version!r} for {expected['display_name']!r} "
+                f"at position {uploaded.get('position')!r} with category "
+                f"{uploaded.get('category')!r}; newest reported version is "
+                f"{latest.get('version')!r} at position {latest.get('position')!r} "
+                f"with category {latest.get('category')!r}."
+            )
+        latest_metadata = read_version_metadata(latest, expected, api_key)
+        if already_uploaded:
             if uploaded.get("id") != latest.get("id"):
                 raise SystemExit(
                     f"Nexus version {version!r} is not the newest version of "
