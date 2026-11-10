@@ -326,10 +326,16 @@ def main() -> None:
                 api_key,
                 expected_category="old_version",
             )
-            if latest_metadata != predecessor_metadata:
+            changed_fields = sorted(
+                key
+                for key, value in latest_metadata.items()
+                if predecessor_metadata.get(key) != value
+            )
+            if changed_fields:
                 raise SystemExit(
                     f"Nexus version {version!r} changed file metadata for "
-                    f"{expected['display_name']!r}. No files were uploaded."
+                    f"{expected['display_name']!r}: {', '.join(changed_fields)}. "
+                    "No files were uploaded."
                 )
             continue
 
