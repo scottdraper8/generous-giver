@@ -87,8 +87,19 @@ def get_file_settings(file_uid: str, api_key: str) -> dict[str, Any]:
         },
         api_key,
     )
-    if response.get("errors"):
-        raise SystemExit("Nexus GraphQL returned errors. No files were uploaded.")
+    errors = response.get("errors")
+    if errors:
+        messages = []
+        if isinstance(errors, list):
+            for error in errors:
+                if isinstance(error, dict) and isinstance(error.get("message"), str):
+                    message = " ".join(error["message"].split())[:500]
+                    if message:
+                        messages.append(message)
+        detail = "; ".join(messages) or "Unknown GraphQL error"
+        raise SystemExit(
+            f"Nexus GraphQL returned errors: {detail}. No files were uploaded."
+        )
     nodes = response.get("data", {}).get("modFilesByUid", {}).get("nodes")
     if not isinstance(nodes, list) or len(nodes) != 1 or not isinstance(nodes[0], dict):
         raise SystemExit(
