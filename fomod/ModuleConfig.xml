@@ -64,7 +64,6 @@
           <plugins order="Explicit">
             <plugin name="Keep Dialogue Open">
               <description>Leave Gek, Korvax, and Vy'keen dialogue open after giving a gift.</description>
-              <image path="fomod/images/normal-dialogue-open.gif" />
               <conditionFlags>
                 <flag name="dialogue_mode">open</flag>
               </conditionFlags>
@@ -74,7 +73,6 @@
             </plugin>
             <plugin name="Close dialogue (normal behavior)">
               <description>Close Gek, Korvax, and Vy'keen dialogue after giving a gift.</description>
-              <image path="fomod/images/normal-dialogue-closed.gif" />
               <conditionFlags>
                 <flag name="dialogue_mode">closed</flag>
               </conditionFlags>
@@ -116,7 +114,6 @@
           <plugins order="Explicit">
             <plugin name="Keep dialogue open and cycle gift option">
               <description>Keep the dialogue open and reseed the Autophage to request another gift after each gift.</description>
-              <image path="fomod/images/autophage-dialogue-open.gif" />
               <conditionFlags>
                 <flag name="autophage_dialogue">keep</flag>
               </conditionFlags>
@@ -126,7 +123,6 @@
             </plugin>
             <plugin name="Close dialogue and remove ability to regift that NPC (normal behavior)">
               <description>Use vanilla behavior: close the dialogue and remove the gift option for that Autophage.</description>
-              <image path="fomod/images/autophage-dialogue-closed.gif" />
               <conditionFlags>
                 <flag name="autophage_dialogue">remove</flag>
               </conditionFlags>

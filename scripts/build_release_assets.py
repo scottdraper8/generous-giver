@@ -316,23 +316,11 @@ def validate_autophage_fomod(config: ET.Element, payloads: list[Path]) -> None:
         "Close dialogue (normal behavior)",
     }.issubset(first_page_options):
         raise SystemExit("FOMOD first-page dialogue option titles are incorrect.")
-    normal_open_image = steps[0].find(
-        "./optionalFileGroups/group/plugins/plugin[@name='Keep Dialogue Open']/image"
+    normal_dialogue_images = steps[0].findall(
+        "./optionalFileGroups/group[@name='Dialogue Behavior']/plugins/plugin/image"
     )
-    if (
-        normal_open_image is None
-        or normal_open_image.get("path") != "fomod/images/normal-dialogue-open.gif"
-    ):
-        raise SystemExit("FOMOD normal dialogue-open option has the wrong image.")
-    normal_closed_image = steps[0].find(
-        "./optionalFileGroups/group/plugins/"
-        "plugin[@name='Close dialogue (normal behavior)']/image"
-    )
-    if (
-        normal_closed_image is None
-        or normal_closed_image.get("path") != "fomod/images/normal-dialogue-closed.gif"
-    ):
-        raise SystemExit("FOMOD normal dialogue-closed option has the wrong image.")
+    if normal_dialogue_images:
+        raise SystemExit("FOMOD normal dialogue options must not have images.")
     plugins = steps[1].findall("./optionalFileGroups/group/plugins/plugin")
     recommended = {
         plugin.get("name")
@@ -354,12 +342,6 @@ def validate_autophage_fomod(config: ET.Element, payloads: list[Path]) -> None:
     expected_images = {
         "Enable Multiplier": "fomod/images/autophage-10.jpg",
         "Disable Multiplier": "fomod/images/autophage-multiplier-disabled.jpg",
-        "Keep dialogue open and cycle gift option": (
-            "fomod/images/autophage-dialogue-open.gif"
-        ),
-        "Close dialogue and remove ability to regift that NPC (normal behavior)": (
-            "fomod/images/autophage-dialogue-closed.gif"
-        ),
     }
     if images != expected_images:
         raise SystemExit("FOMOD Autophage settings have the wrong option images.")
