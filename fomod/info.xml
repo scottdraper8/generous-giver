@@ -3,6 +3,6 @@
   <Name>Generous Giver</Name>
   <Author>scottdraper8</Author>
   <Version>7.14</Version>
-  <Description>Choose to give 5, 10, 15, or 20 gifts and gain the same amount of standing with all alien races.</Description>
+  <Description>Configure gift multipliers and dialogue behavior for every alien race, including separate Autophage settings.</Description>
   <Website>https://github.com/scottdraper8/generous-giver</Website>
 </fomod>

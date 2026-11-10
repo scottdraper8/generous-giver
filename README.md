@@ -10,7 +10,9 @@
 
 Mod for No Man's Sky that allows players to offer a configurable amount of alien
 gifts in one interaction, while also allowing the user to choose if they want
-the dialogue screen with the alien to stay open.
+the dialogue screen with the alien to stay open. Autophage have separate
+controls for applying the multiplier and for keeping and cycling their gift
+option.
 
 ---
 
@@ -42,11 +44,17 @@ The only places this mod should be downloaded from are:
 
 Install the archive with [Vortex](https://www.nexusmods.com/vortex) or
 [Amethyst Mod Manager](https://github.com/ChrisDKN/Amethyst-Mod-Manager). Choose
-a gift amount and dialogue behavior in the FOMOD, then deploy.
+a gift amount and dialogue behavior for Gek, Korvax, and Vy'keen on the first
+FOMOD page. The second page controls whether the multiplier applies to Autophage
+and whether their gift option stays available and cycles to a new gift. The
+recommended defaults enable the Autophage multiplier and keep and cycle their
+gift option.
 
 Each GitHub release includes the all-in-one FOMOD installer and eight optional
 archives for installing without a mod manager. Choose exactly one optional
-archive for the gift amount and dialogue behavior you want.
+archive for the gift amount and dialogue behavior you want. All eight manual
+archives enable the Autophage multiplier and keep their dialogue open while
+cycling to a new requested gift.
 
 To install an optional archive manually, extract it into the game's
 `GAMEDATA/MODS` directory. The archive contains a folder named

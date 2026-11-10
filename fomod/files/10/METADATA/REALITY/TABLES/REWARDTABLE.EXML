@@ -77,4 +77,58 @@
       </Property>
     </Property>
   </Property>
+  <Property name="NPCPlanetSiteTable">
+    <Property name="NPCPlanetSiteTable" value="GcGenericRewardTableEntry" _id="GG_BUI_R_10">
+      <Property name="Id" value="GG_BUI_R_10" />
+      <Property name="List" value="GcRewardTableItemList">
+        <Property name="RewardChoice" value="GiveAll" />
+        <Property name="OverrideZeroSeed" value="false" />
+        <Property name="UseInventoryChoiceOverride" value="false" />
+        <Property name="IncrementStat" value="" />
+        <Property name="List">
+          <Property name="List" value="GcRewardTableItem" _index="0">
+            <Property name="PercentageChance" value="100.000000" />
+            <Property name="LabelID" value="" />
+            <Property name="Reward" value="GcRewardFactionStanding">
+              <Property name="GcRewardFactionStanding">
+                <Property name="Faction" value="GcMissionFaction">
+                  <Property name="MissionFaction" value="Builders" />
+                </Property>
+                <Property name="AmountMin" value="10" />
+                <Property name="AmountMax" value="10" />
+                <Property name="SetToMinBeforeAdd" value="false" />
+                <Property name="TryToUseMissionBoardOriginUA" value="false" />
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+    <Property name="NPCPlanetSiteTable" value="GcGenericRewardTableEntry" _id="GG_BUI_KEEP">
+      <Property name="Id" value="GG_BUI_KEEP" />
+      <Property name="List" value="GcRewardTableItemList">
+        <Property name="RewardChoice" value="GiveAll" />
+        <Property name="OverrideZeroSeed" value="false" />
+        <Property name="UseInventoryChoiceOverride" value="false" />
+        <Property name="IncrementStat" value="" />
+        <Property name="List">
+          <Property name="List" value="GcRewardTableItem" _index="0">
+            <Property name="PercentageChance" value="100.000000" />
+            <Property name="LabelID" value="" />
+            <Property name="Reward" value="GcRewardSetInteractionMissionState">
+              <Property name="GcRewardSetInteractionMissionState">
+                <Property name="MissionState" value="GcInteractionMissionState">
+                  <Property name="InteractionMissionState" value="Unused" />
+                </Property>
+                <Property name="SetForThisInteraction" value="true" />
+                <Property name="SetForInteractionClassInMyBuilding" value="GcInteractionType">
+                  <Property name="InteractionType" value="None" />
+                </Property>
+              </Property>
+            </Property>
+          </Property>
+        </Property>
+      </Property>
+    </Property>
+  </Property>
 </Data>
