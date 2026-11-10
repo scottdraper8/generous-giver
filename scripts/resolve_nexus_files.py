@@ -76,7 +76,6 @@ def get_file_settings(file_uid: str, api_key: str) -> dict[str, Any]:
                       fileId
                       name
                       description
-                      manager
                       primary
                       requirementsAlert
                     }
@@ -220,8 +219,10 @@ def read_version_metadata(
     return {
         "description": description,
         "primary_mod_manager_download": is_primary,
+        # GraphQL's `manager` field is not the file-version installation policy.
+        # The v3 version response exposes that policy directly.
         "allow_mod_manager_download": read_boolean_setting(
-            settings, "manager", display_name
+            version, "supports_mod_managers", display_name
         ),
         "show_requirements_pop_up": read_boolean_setting(
             settings, "requirementsAlert", display_name
