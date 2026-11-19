@@ -13,7 +13,7 @@ repos:
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: check-yaml
-        files: ^\.github/workflows/.*\.ya?ml$
+        files: ^\.github/(dependabot\.ya?ml|workflows/.*\.ya?ml)$
         types: [file]
       - id: check-xml
         files: (?i)^fomod/.*\.(xml|exml)$
@@ -34,6 +34,12 @@ repos:
         files: ^scripts/.*\.py$
   - repo: local
     hooks:
+      - id: dependency-policy
+        name: Dependency and workflow pin policy
+        entry: python3 -B scripts/check_dependency_policy.py
+        language: system
+        pass_filenames: false
+        always_run: true
       - id: prettier
         name: Prettier (Markdown)
         entry: prettier --write --print-width 80 --prose-wrap always
@@ -42,7 +48,7 @@ repos:
         types: [markdown]
         additional_dependencies: [prettier@3.9.9]
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.24.0
+    rev: 341e2a331ba578029e66c2e01183e7a6b5ca9ab4 # v0.24.0
     hooks:
       - id: markdownlint-cli2
         language_version: "26.12.1"
