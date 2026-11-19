@@ -1,4 +1,5 @@
 minimum_pre_commit_version: "4.6.2"
+default_install_hook_types: [pre-commit, commit-msg]
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c
@@ -33,6 +34,17 @@ repos:
         files: ^scripts/.*\.py$
   - repo: local
     hooks:
+      - id: contribution-branch-policy
+        name: reject attributed branch names
+        entry: .github/scripts/check_contribution_attribution.py branches
+        language: python
+        pass_filenames: false
+        always_run: true
+      - id: contribution-message-policy
+        name: reject attributed commit metadata
+        entry: .github/scripts/check_contribution_attribution.py message-file
+        language: python
+        stages: [commit-msg]
       - id: prettier
         name: Prettier (Markdown)
         entry: prettier --write --print-width 80 --prose-wrap always
