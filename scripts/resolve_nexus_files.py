@@ -21,6 +21,25 @@ GRAPHQL_URL = "https://api.nexusmods.com/v2/graphql"
 MOD_ID = "7017976566438"
 GAME_DOMAIN = "nomanssky"
 GAME_SCOPED_MOD_ID = "4774"
+MAX_VERSION_DESCRIPTION_LENGTH = 255
+
+
+def desired_description(
+    latest_metadata: dict[str, Any], expected: dict[str, Any]
+) -> str:
+    value = expected.get("description", latest_metadata["description"])
+    if not isinstance(value, str) or not value.strip():
+        raise SystemExit(
+            f"Nexus description for {expected['display_name']!r} must be non-empty. "
+            "No files were uploaded."
+        )
+    if len(value) > MAX_VERSION_DESCRIPTION_LENGTH:
+        raise SystemExit(
+            f"Nexus description for {expected['display_name']!r} exceeds the "
+            f"{MAX_VERSION_DESCRIPTION_LENGTH}-character file-version limit. "
+            "No files were uploaded."
+        )
+    return value
 
 
 def get_json(base_url: str, path: str, api_key: str) -> dict[str, Any]:
@@ -354,6 +373,7 @@ def main() -> None:
         latest_metadata = read_version_metadata(latest, expected, api_key)
         desired_metadata = {
             **latest_metadata,
+            "description": desired_description(latest_metadata, expected),
             # Every Generous Giver archive supports direct installation by a mod
             # manager. Do not inherit an accidental Nexus UI toggle here.
             "allow_mod_manager_download": True,

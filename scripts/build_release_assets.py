@@ -25,6 +25,12 @@ QUANTITIES = (5, 10, 15, 20)
 DIALOGUE_MODES = ("open", "closed")
 MULTIPLIER_MODES = ("enabled", "disabled")
 AUTOPHAGE_DIALOGUE_MODES = ("keep", "remove")
+MAX_NEXUS_DESCRIPTION_LENGTH = 255
+INSTALLER_NEXUS_DESCRIPTION = (
+    "Recommended to use this one!\n"
+    "Use this FOMOD installer to choose the gift amount and dialogue behavior. "
+    "Install only one optional file below if you do not use this installer."
+)
 
 
 def read_version() -> str:
@@ -69,6 +75,13 @@ def validate_badge(path: Path, label: str, version: str) -> None:
 
 
 def validate_release_metadata(version: str) -> None:
+    if not INSTALLER_NEXUS_DESCRIPTION.strip() or (
+        len(INSTALLER_NEXUS_DESCRIPTION) > MAX_NEXUS_DESCRIPTION_LENGTH
+    ):
+        raise SystemExit(
+            "The installer Nexus description must be non-empty and no longer than "
+            f"{MAX_NEXUS_DESCRIPTION_LENGTH} characters."
+        )
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     nms_badges = re.findall(
         r"!\[No Man's Sky ([^\]]+)\]\(assets/badges/nms-version\.svg\)",
@@ -538,6 +551,7 @@ def main() -> None:
         {
             "archive": installer_name,
             "display_name": "Generous Giver - All-in-One Installer",
+            "description": INSTALLER_NEXUS_DESCRIPTION,
             "category": "main",
             "update_mod_version": True,
         }
